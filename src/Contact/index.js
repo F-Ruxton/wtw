@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles.css';
 
 const cName = 'Contact';
 
-export default function Contact () {
-  return (
-    <div className={cName}>
-      Contact
-    </div>
-  );
+class Contact extends Component {
+  render() {
+    return (
+      <div className={cName}>
+        Contact
+      </div>
+    );
+  }
 }
+
+export default Contact;

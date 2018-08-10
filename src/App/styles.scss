@@ -3,8 +3,6 @@
 .App {
   background: $background-color;
   color: $text-color;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: fit-content;
+  padding: $nav-height 10px;
 }

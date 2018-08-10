@@ -1,6 +1,6 @@
+@import 'styles/variables.scss';
+
 .Home {
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: calc(100vh - #{$nav-height});
+  font-size: 30px;
 }

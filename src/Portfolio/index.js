@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles.css';
 
 const cName = 'Portfolio';
 
-export default function Portfolio () {
-  return (
-    <div className={cName}>
-      Portfolio
-    </div>
-  );
+ class Portfolio extends Component {
+  render() {
+    return (
+      <div className={cName}>
+        Portfolio
+      </div>
+    );
+  }
 }
+
+export default Portfolio;

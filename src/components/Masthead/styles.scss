@@ -1,3 +1,10 @@
 .Masthead {
   display: flex;
+  width: 300px;
+  font-size: 30px;
+  padding-left: 10px;
+
+  &__text {
+    margin-left: 15px;
+  }
 }

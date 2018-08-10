@@ -1,6 +1,21 @@
+@import 'styles/variables.scss';
+
 .Nav {
-  font-size: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: fixed;
+  background: $background-color;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding: 10px;
+
+  &__buttons {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

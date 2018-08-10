@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles.css';
 
 const cName = 'Home';
 
-export default function Home () {
-  return (
-    <div className={cName}>
-      Home
-    </div>
-  );
+class Home extends Component {
+  render() {
+    return (
+      <div className={cName}>
+        Home
+      </div>
+    );
+  }
 }
+
+export default Home;

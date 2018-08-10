@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles.css';
 
-const cName = 'About';
+const cName = 'Portfolio';
 
-export default function About () {
-  return (
-    <div className={cName}>
-      About
-    </div>
-  );
+class About extends Component {
+  render() {
+    return (
+      <div className={cName}>
+        About
+      </div>
+    );
+  }
 }
+
+export default About;

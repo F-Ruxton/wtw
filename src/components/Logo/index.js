@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash/fp';
-import logo from '../../assets/images/wtw-logo.svg'
+import logo from '../../assets/images/logos/wtw-logo-main.svg'
 import { SMALL, MEDIUM, LARGE, X_LARGE } from '../../shared/sizes';
 import './styles.css';
 

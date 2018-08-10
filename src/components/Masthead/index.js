@@ -14,7 +14,7 @@ export default function Masthead (props) {
     <div className={cName}>
       <Logo size={size} />
       <div className={`${cName}__text`}>
-        { size === SMALL ? 'WTW' : 'Wharncliffe Trailworks' }
+        { size === SMALL ? 'WTW' : 'WHARNCLIFFE TRAILWORKS' }
       </div>
     </div>
   );
