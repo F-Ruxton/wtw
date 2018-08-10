@@ -36,6 +36,7 @@ export default function Logo (props) {
         className={`${cName}__img`}
         style={imgSize}
         src={logo}
+        alt={'Logo'}
       />
     </div>
   );

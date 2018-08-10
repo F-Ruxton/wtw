@@ -1,7 +1,7 @@
 import React from 'react';
-import classnames from 'classnames';
+import _ from 'lodash/fp';
 import Logo from '../Logo';
-import { MEDIUM, X_LARGE } from '../../shared/sizes';
+import { MEDIUM } from '../../shared/sizes';
 import './styles.css';
 
 const cName = 'Loading';
@@ -9,11 +9,16 @@ const cName = 'Loading';
 export default function Loading (props) {
   const {
     size = MEDIUM,
+    msg,
   } = props;
 
   return (
     <div className={cName}>
-      <Logo size={X_LARGE} />
+      <Logo size={size} />
+      { !_.isEmpty(msg) &&
+        <div className={`${cName}__msg`}>
+          {msg}
+        </div> }
     </div>
   );
 }

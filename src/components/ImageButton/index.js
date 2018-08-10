@@ -22,6 +22,7 @@ export default function ImageButton (props) {
       <img
         className={`${cName}__img`}
         src={src}
+        alt={`Button: ${text}`}
         style={imgStyle}
       />
     </div>
