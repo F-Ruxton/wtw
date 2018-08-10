@@ -1,12 +1,13 @@
 import React from 'react';
+import Logo from '../Logo';
 import './styles.css';
 
-const cName = 'Home';
+const cName = 'Loading';
 
-export default function Home () {
+export default function Loading () {
   return (
     <div className={cName}>
-      Home
+      <Logo />
     </div>
   );
 }

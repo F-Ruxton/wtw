@@ -1,12 +1,12 @@
 import React from 'react';
 import './styles.css';
 
-const cName = 'Home';
+const cName = 'Logo';
 
-export default function Home () {
+export default function Logo () {
   return (
     <div className={cName}>
-      Home
+      Logo
     </div>
   );
 }
