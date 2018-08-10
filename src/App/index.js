@@ -4,17 +4,19 @@ import Home from '../Home';
 import Portfolio from '../Portfolio';
 import About from '../About';
 import Contact from '../Contact';
+import Loading from '../components/Loading';
 import './styles.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Loading />
+        {/* <Nav />
         <Home />
         <Portfolio />
         <About />
-        <Contact />
+        <Contact /> */}
       </div>
     );
   }
