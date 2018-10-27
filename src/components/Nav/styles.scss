@@ -11,6 +11,7 @@
   right: 0;
   height: 80px;
   padding: 10px;
+  z-index: $z-index-navbar;
 
   &__buttons {
     height: 100%;

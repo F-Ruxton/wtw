@@ -1,6 +1,11 @@
 @import 'styles/variables.scss';
 
+%hover {
+  cursor: pointer;
+}
+
 .Rock {
+  z-index: 1;
   display: flex;
   align-items: center;
   margin: 5px;
@@ -9,11 +14,23 @@
   &__text {
     position: absolute;
     font-size: 25px;
+
+    &:hover {
+      @extend %hover;
+    }
+
+    &:hover.rock-fill {
+      fill: $rock-yellow;
+    }
   }
 }
 
 .rock-line {
-  fill: white;
+  fill: $line-color;
+
+  &:hover.rock-fill {
+    fill: $rock-yellow;
+  }
 
   &__hovered {
     // fill: #5ba05b;
@@ -21,7 +38,11 @@
 }
 
 .rock-fill {
-  fill: grey;
+  fill: $fill-color;
+
+  &:hover {
+    fill: $rock-yellow;
+  }
 
   &__hovered {
     fill: $rock-yellow;

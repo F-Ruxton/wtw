@@ -1,102 +1,66 @@
 import React from 'react';
+import _ from 'lodash/fp';
 import Rock1 from './Rock1';
 import Rock2 from './Rock2';
 import Rock3 from './Rock3';
 import Rock4 from './Rock4';
-import  { HOME, PORTFOLIO, ABOUT, CONTACT } from '../../App';
+import { isHome } from '../../utils/navigation';
+import A from '../../components/A';
+import pages from '../../Pages';
 import './styles.css';
 
 const cName = 'Rock';
 
-export const HomeRock = props => {
-  const {
-    handleClick
-  } = props;
+const linkOrButtton = (handleClick, to = false) => {
+  if (!_.isFunction(handleClick)) {
+    return _.isUndefined(to) ? {} : { to };
+  }
 
-  return (
+  return {
+    [isHome() ? 'onClick' : 'to']: isHome() ? handleClick : to,
+  };
+};
+
+export const HomeRock = ({ handleClick, to = `${pages.home.path}#landing` }) => (
+  <A {...linkOrButtton(handleClick, to)}>
     <div className={cName}>
-      <div
-        className={`${cName}__text`}
-        style={{ left: 30 }}
-      >
-        Home
-      </div>
-      <Rock1
-        handleClick={handleClick(HOME)}
-        style={{
-          height: 120,
-          width: 110,
-        }}
-      />
+        <div className={`${cName}__text`} style={{ left: 30 }}>
+          Home
+        </div>
+        <Rock1 style={{ height: 120, width: 110 }} />
     </div>
-  );
-}
-export const PortfolioRock = props => {
-  const {
-    handleClick
-  } = props;
+  </A>
+);
 
-  return (
+export const PortfolioRock = ({ handleClick, to = pages.portfolio.path }) => (
+  <A {...linkOrButtton(handleClick, to)}>
     <div className={cName}>
-      <div
-        className={`${cName}__text`}
-        style={{ left: 10 }}
-      >
+      <div className={`${cName}__text`} style={{ left: 10 }}>
         Portfolio
       </div>
-      <Rock2
-        handleClick={handleClick(PORTFOLIO)}
-        style={{
-          height: 100,
-          width: 150,
-        }}
-       />
+      <Rock2 style={{ height: 100, width: 150 }} />
     </div>
-  );
-}
-export const AboutRock = props => {
-  const {
-    handleClick
-  } = props;
+  </A>
+);
 
-  return (
+export const AboutRock = ({ handleClick, to = pages.about.path }) => (
+  <A {...linkOrButtton(handleClick, to)}>
     <div className={cName}>
-      <div
-        className={`${cName}__text`}
-        style={{ left: 18 }}
-      >
+      <div className={`${cName}__text`} style={{ left: 18 }}>
         About
       </div>
-      <Rock3
-        handleClick={handleClick(ABOUT)}
-        style={{
-          height: 100,
-          width: 110,
-        }}
-       />
+      <Rock3 style={{ height: 100, width: 110 }} />
     </div>
-  );
-}
-export const ContactRock = props => {
-  const {
-    handleClick
-  } = props;
+  </A>
+);
 
-  return (
+export const ContactRock = ({ handleClick, to = `${pages.home.path}#contact` }) => (
+  <A {...linkOrButtton(handleClick, to)}>
     <div className={cName}>
-      <div
-        className={`${cName}__text`}
-        style={{ left: 11 }}
-      >
+      <div className={`${cName}__text`} style={{ left: 11 }}>
         Contact
       </div>
-      <Rock4
-        handleClick={handleClick(CONTACT)}
-        style={{
-          height: 100,
-          width: 120,
-        }}
-       />
+      <Rock4 style={{ height: 100, width: 120 }} />
     </div>
-  );
-}
+  </A>
+);

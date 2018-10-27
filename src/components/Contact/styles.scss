@@ -1,0 +1,11 @@
+@import 'styles/variables.scss';
+@import 'styles/section.scss';
+
+.Contact {
+  @extend %section;
+  font-size: 30px;
+
+  &__box {
+    margin: 20px;
+  }
+}

@@ -1,0 +1,104 @@
+@import 'styles/variables.scss';
+@import 'styles/section.scss';
+
+.About {
+
+  max-width: 1600px;
+  margin: auto;
+  font-size: 30px;
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__row-1 {
+    @include section-fill-page(calc(140px + $header-height));
+  }
+
+  &__text {
+    font-size: $font-size-md;
+    padding: 20px;
+  }
+
+  &__heading {
+    font-size: 36px;
+  }
+
+  &__emph {
+    font-weight: bold;
+  }
+
+  &__gallery {
+    margin: 30px auto;
+  }
+
+  &__text-sections {
+    max-width: 1200px;
+    margin: auto;
+
+    &--section {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__team {
+    @include section-fill-page(calc(140px + $header-height));
+    max-width: 1600px;
+    padding: 0;
+
+    &--row {
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1600px) {
+        flex-direction: row;
+      }
+    }
+
+    &-member {
+      flex-grow: 1;
+      width: 90%;
+      margin: auto;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      @media screen and (min-width: 1600px) {
+        width: 50%;
+      }
+
+      &--right {
+        flex-direction: row-reverse;
+
+        @media screen and (min-width: 1600px) {
+          flex-direction: row;
+        }
+      }
+
+      &--img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid white;
+
+        @media screen and (max-width: 600px) {
+          height: 200px;
+          width: 200px;
+        }
+
+      }
+
+      &--name {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      &--text {
+        font-size: 20px;
+        margin: 0 20px;
+      }
+    }
+  }
+
+}

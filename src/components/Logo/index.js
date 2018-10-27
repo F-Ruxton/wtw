@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash/fp';
-import logo from '../../assets/images/logos/wtw-logo-main.svg'
+import { logos } from '../../assets/images/';
 import { SMALL, MEDIUM, LARGE, X_LARGE } from '../../shared/sizes';
 import './styles.css';
 
@@ -35,8 +35,8 @@ export default function Logo (props) {
       <img
         className={`${cName}__img`}
         style={imgSize}
-        src={logo}
-        alt={'Logo'}
+        src={logos.logoMain.src}
+        alt={logos.logoMain.alt}
       />
     </div>
   );
