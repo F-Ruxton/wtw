@@ -1,6 +1,7 @@
 import Home from './Home';
 import Portfolio from './Portfolio';
 import About from './About';
+import Contact from './Contact';
 import NotFoundPage from './NotFoundPage';
 import routes from './routes';
 
@@ -20,6 +21,12 @@ export default {
   portfolio: {
     path: routes.portfolio,
     component: Portfolio,
+    exact: true,
+  },
+
+  contact: {
+    path: routes.contact,
+    component: Contact,
     exact: true,
   },
 

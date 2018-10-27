@@ -21,7 +21,7 @@ const linkOrButtton = (handleClick, to = false) => {
   };
 };
 
-export const HomeRock = ({ handleClick, to = `${pages.home.path}#landing` }) => (
+export const HomeRock = ({ handleClick, to = pages.home.path }) => (
   <A {...linkOrButtton(handleClick, to)}>
     <div className={cName}>
         <div className={`${cName}__text`} style={{ left: 30 }}>
@@ -54,7 +54,7 @@ export const AboutRock = ({ handleClick, to = pages.about.path }) => (
   </A>
 );
 
-export const ContactRock = ({ handleClick, to = `${pages.home.path}#contact` }) => (
+export const ContactRock = ({ handleClick, to = pages.contact.path }) => (
   <A {...linkOrButtton(handleClick, to)}>
     <div className={cName}>
       <div className={`${cName}__text`} style={{ left: 11 }}>

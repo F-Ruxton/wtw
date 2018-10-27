@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Header from '../Header';
-import Row from '../Row';
-import Line from '../Line';
-import ContactDetails from '../ContactDetails';
-import ContactForm from '../ContactForm';
-import { VERTICAL } from '../../shared/directions';
+import Header from '../../components/Header';
+import Row from '../../components/Row';
+import ContactDetails from '../../components/ContactDetails';
+import ContactForm from '../../components/ContactForm';
 import './styles.css';
 
 export const CONTACT = 'CONTACT';

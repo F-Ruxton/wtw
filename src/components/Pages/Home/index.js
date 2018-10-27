@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
-import path from 'path';
 import Loadable from 'react-loadable';
 import Loading from '../../components/Loading'
 import A from '../../components/A';
@@ -9,6 +8,8 @@ import { getHashSectionFromProps } from '../../utils/navigation';
 import aboutSections from '../About/sections';
 import routes from '../routes';
 import './styles.css';
+
+import { Image } from 'cloudinary-react';
 
 import ScrollTo from '../../components/ScrollTo';
 
@@ -52,53 +53,36 @@ const links = [
     image: projects.peatys.trail.trail_roller_closeup_1,
     linkText: 'Portfolio'
   },
+  {
+    to: routes.contact,
+    image: projects.peatys.trail.trail_roller_closeup_1,
+    linkText: 'Contact'
+  },
 ];
-
-const CLOUDINARY_CLOUD_NAME = 'wtw';
-
-// const getImageUrl = ({
-//   resourceType = 'image',
-//   type,
-//   version,
-//   transformations,
-//   publicId,
-//   format,
-// }) => path.join(
-//   'https://res.cloudinary.com',
-//   CLOUDINARY_CLOUD_NAME,
-//   ..._.compact([
-//     resourceType,
-//     type,
-//     version,
-//     transformations,
-//     publicId,
-//     format,
-//   ]),
-// );
 
 const LoadablePage = Loadable.Map({
   loader: {
     Landing : () => import('../../components/Landing'),
     About   : () => import('../../components/Gallery'),
-    Contact : () => import('../../components/Contact'),
   },
   loading: Loading,
   render(loaded, props) {
     const { section } = props;
 
     const Landing = loaded.Landing.default;
-    const Contact = loaded.Contact.default;
+    // const Contact = loaded.Contact.default;
 
     const isHomePageSect = isHomePageSection(section);
 
     return (
       <React.Fragment>
 
-        <img
-          src='https://res.cloudinary.com/wtw/image/upload/v1540653846/projects/peatys/building/rollin_bwd_1LS.jpg'
-          style={{ width: 500, maxWidth: '100%', height: 'auto' }}
-          title="Click for the larger version."
-        />
+      <Image
+        cloudName="wtw"
+        publicId="/projects/peatys/building/rollin_bwd_1LS.jpg"
+        width="0.5"
+        crop="scale"
+      />
 
         <ScrollTo scrollOnMount={isHomePageSect && section === LANDING}>
           <Landing />
@@ -112,14 +96,15 @@ const LoadablePage = Loadable.Map({
         { _.map(link => <LinkSection key={link.to} {...link} />, links) }
         </div>
 
-        <ScrollTo scrollOnMount={isHomePageSect && section === CONTACT}>
-          <Contact />
-        </ScrollTo>
-
       </React.Fragment>
     );
   },
 });
+
+
+// <ScrollTo scrollOnMount={isHomePageSect && section === CONTACT}>
+//   <Contact />
+// </ScrollTo>
 
 export default class HomePage extends Component {
   render() {

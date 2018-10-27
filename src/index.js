@@ -1,8 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 import './styles/global.css';
-import App from './App';
+import App from './components/App';
+import PhotosListReducer from './reducers/PhotosListReducer';
+import UploadedPhotosReducer from './reducers/UploadedPhotosReducer';
+import CloudinaryConfig from './config/cloudinary';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootReducer = combineReducers({
+  photos: PhotosListReducer,
+  uploadedPhotos: UploadedPhotosReducer,
+});
+
+const store = createStore(rootReducer);
+
+render(
+  <Provider store={store}>
+    <App
+      cloudName={CloudinaryConfig.cloud_name}
+      uploadPreset={CloudinaryConfig.upload_preset}
+    />
+  </Provider>,
+  document.getElementById('root'),
+);
+
 registerServiceWorker();
