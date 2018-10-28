@@ -5,18 +5,12 @@ import PropTypes from 'prop-types';
 import { openUploadWidget } from '../utils/images/CloudinaryService';
 import { photosUploaded } from '../actions';
 import Photo from './Photo';
-import FacebookImage from './FacebookImage';
-import Introduction from './Introduction';
 
 class PhotoList extends Component {
     render() {
         return (
             <div className="photoList">
-                <FacebookImage
-                    publicId1="billclinton"
-                    publicId2="officialchucknorrispage"
-                />
-                <Introduction />
+
                 <h1>Your Photos</h1>
                 <div className="actions">
                     <a
@@ -24,7 +18,7 @@ class PhotoList extends Component {
                         onClick={this.uploadImageWithCloudinary.bind(this)}
                     >
                         Add photos with Cloudinary File upload
-                    </a>
+                    </a>4
                 </div>
                 <div className="actions">
                     <NavLink className="upload_link" exact to="/photos/new">

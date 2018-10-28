@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash/fp';
 import Team from './team';
 import sections from './sections';
-import Gallery from '../../components/Gallery';
-import Header from '../../components/Header';
+import Gallery from '../../Gallery';
+import Header from '../../Header';
 import './styles.css';
 
 export const ABOUT = 'ABOUT';

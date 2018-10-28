@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from '../../components/Header';
-import Row from '../../components/Row';
-import ContactDetails from '../../components/ContactDetails';
-import ContactForm from '../../components/ContactForm';
+import Header from '../../Header';
+import Row from '../../Row';
+import ContactDetails from '../../ContactDetails';
+import ContactForm from '../../ContactForm';
 import './styles.css';
 
 export const CONTACT = 'CONTACT';

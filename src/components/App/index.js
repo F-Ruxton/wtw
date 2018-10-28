@@ -1,38 +1,19 @@
-// import React, { Component } from 'react';
-// import { BrowserRouter as Router } from 'react-router-dom';
-// import Nav from '../components/Nav';
-// import Footer from '../components/Footer';
-// import SwitchRouter from '../Pages/routing/SwitchRouter';
-// import pages from '../Pages';
-// import './styles.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <Router>
-//         <div className="App">
-//           <Nav />
-//           <SwitchRouter pages={pages} />
-//           <Footer />
-//         </div>
-//       </Router>
-//     );
-//   }
-// }
-
-// export default App;
-
-
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { CloudinaryContext, Image } from 'cloudinary-react';
 import { photosFetched } from '../../actions';
 import PhotoListContainer from '../PhotoList';
-import PhotosUploaderContainer from '../PhotosUploader';
 import { fetchPhotos } from '../../utils/images/CloudinaryService';
-import './App.css';
+
+import Nav from '../Nav';
+import Footer from '../Footer';
+import SwitchRouter from '../Pages/routing/SwitchRouter';
+import pages from '../Pages';
+
+import './styles.css';
+
 
 class App extends Component {
   componentDidMount() {
@@ -52,21 +33,15 @@ class App extends Component {
           fetch-format="auto"
           quality="auto"
         />
-        <BrowserRouter>
-          <Switch className="router">
-              <Route
-                exact
-                path="/photos"
-                component={PhotoListContainer}
-              />
-              <Route
-                exact
-                path="/photos/new"
-                component={PhotosUploaderContainer}
-              />
-              <Redirect from="/" to="/photos" />
-            </Switch>
-        </BrowserRouter>
+
+        <Router>
+          <div className="App">
+            <Nav />
+            <SwitchRouter pages={pages} />
+            <Footer />
+          </div>
+        </Router>
+
       </CloudinaryContext>
     );
   }

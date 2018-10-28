@@ -1,6 +1,6 @@
 export default {
   cloud_name: 'wtw',
   upload_preset: 'UUUUUUUU',
-  api_key: '673113237363919',
-  api_secret: 'qoDrw71Cruf6_vCGRh4hnqjvl3o',
+  api_key: process.env.REACT_APP_CLOUDINARY_KEY,
+  api_secret: process.env.REACT_APP_CLOUDINARY_SECRET,
 };

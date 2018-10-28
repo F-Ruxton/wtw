@@ -4,6 +4,31 @@ import { Image, Transformation } from 'cloudinary-react';
 import { url } from '../utils/images/CloudinaryService';
 import PhotoThumbnails from './PhotoThumbnails';
 
+/*
+
+example for chaining transformations
+<Image
+  className="static-photo"
+  responsive
+  type="facebook"
+  width="auto"
+  crop="scale"
+  angle="20"
+  publicId={this.state.currentPublicId}
+>
+<Transformation effect="art:hokusai" />
+<Transformation
+  border="3px_solid_rgb:00390b"
+  radius="20"
+/>
+</Image>
+
+*/
+
+
+
+
+
 class Photo extends Component {
     constructor(props) {
         super(props);

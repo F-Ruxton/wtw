@@ -1,5 +1,12 @@
 ## ToDo
 
+- [ ] Cloudinary
+  - [ ] Environment variables for keys
+  - [ ] Images in grid gallery
+  - [ ] Bringing images by folder
+  - [ ] Bringing images by tag
+  - [ ] Long term - automatic copying of images from drive
+
 - [ ] General
   - [ ] Section padding
   - [ ] Responsive (have multiple image sizes)

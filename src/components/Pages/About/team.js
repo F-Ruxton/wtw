@@ -1,8 +1,8 @@
 import React from 'react';
 import _ from 'lodash/fp';
 import classNames from 'classnames';
-import FillImage from '../../components/FillImage';
-import { team, projects } from '../../assets/images';
+import FillImage from '../../FillImage';
+import { team, projects } from '../../../assets/images';
 
 const cName = 'About';
 

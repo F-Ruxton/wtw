@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
 import Loadable from 'react-loadable';
-import Loading from '../../components/Loading'
-import A from '../../components/A';
-import { projects, team } from '../../assets/images';
-import { getHashSectionFromProps } from '../../utils/navigation';
+import Loading from '../../Loading'
+import A from '../../A';
+import { projects, team } from '../../../assets/images';
+import { getHashSectionFromProps } from '../../../utils/navigation';
 import aboutSections from '../About/sections';
 import routes from '../routes';
 import './styles.css';
 
 import { Image } from 'cloudinary-react';
 
-import ScrollTo from '../../components/ScrollTo';
+import ScrollTo from '../../ScrollTo';
 
 const cName = 'Home';
 
@@ -62,8 +62,8 @@ const links = [
 
 const LoadablePage = Loadable.Map({
   loader: {
-    Landing : () => import('../../components/Landing'),
-    About   : () => import('../../components/Gallery'),
+    Landing : () => import('../../Landing'),
+    About   : () => import('../../Gallery'),
   },
   loading: Loading,
   render(loaded, props) {

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
-import Slider, { lazyLoadSettings } from '../../components/Slider';
-import FillImage from '../../components/FillImage';
-import Header from '../../components/Header';
-import { team, projects } from '../../assets/images';
-import { getHeightOffset } from '../../styles/utils';
-import scssConstants from '../../styles/constants';
-import WheelSelector from '../../components/WheelSelector';
+import Slider, { lazyLoadSettings } from '../../Slider';
+import FillImage from '../../FillImage';
+import Header from '../../Header';
+import { team, projects } from '../../../assets/images';
+import { getHeightOffset } from '../../../styles/utils';
+import scssConstants from '../../../styles/constants';
+import WheelSelector from '../../WheelSelector';
 import './styles.css';
 
 export const PORTFOLIO = 'PORTFOLIO';

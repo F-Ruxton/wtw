@@ -5,8 +5,8 @@ import Rock2 from './Rock2';
 import Rock3 from './Rock3';
 import Rock4 from './Rock4';
 import { isHome } from '../../utils/navigation';
-import A from '../../components/A';
-import pages from '../../Pages';
+import A from '../A';
+import pages from '../Pages';
 import './styles.css';
 
 const cName = 'Rock';

@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../../components/Header';
-import FillImage from '../../components/FillImage';
-import A from '../../components/A';
-import pages from '../../Pages';
+import Header from '../../Header';
+import FillImage from '../../FillImage';
+import A from '../../A';
+import pages from '../';
 import './styles.css';
 
 const cName = 'NotFoundPage';

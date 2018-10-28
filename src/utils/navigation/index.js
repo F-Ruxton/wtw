@@ -1,5 +1,5 @@
 import _ from 'lodash/fp';
-import pages from '../../Pages';
+import pages from '../../components/Pages';
 
 export const getCurrentPath = () => window.location.pathname;
 export const getCurrentHash = () => _.flow(
