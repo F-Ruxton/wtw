@@ -24,11 +24,17 @@ class App extends Component {
     // const photos = await fetchPhotos(cloudName);
     // const availableResources = await resources();
 
-    const res = await axios.get('/resources/images')
+    const res2 = await axios.post(
+      '/resources',
+      {
+        bodyArg1: 1,
+        bodyArg2: 2,
+      }
+    );
 
-    console.log('res');
-    console.log(res);
-
+    console.log('res2');
+    console.log(res2);
+    console.log();
 
 
     // console.log('photos');

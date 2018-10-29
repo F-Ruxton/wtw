@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "classnames": "^2.2.6",
     "cloudinary": "^1.11.0",
     "cloudinary-core": "^2.5.0",
