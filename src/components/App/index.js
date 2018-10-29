@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -45,11 +46,21 @@ class App extends Component {
         />
 
         <Router>
-          <div className="App">
-            <Nav />
-            <SwitchRouter pages={pages} />
-            <Footer />
-          </div>
+          <Route render={({ location }) => (
+
+            <div className="App">
+              <Nav />
+
+              <TransitionGroup>
+                <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                  <SwitchRouter pages={pages} />
+                </CSSTransition>
+              </TransitionGroup>
+
+              <Footer />
+            </div>
+          )}
+          ></Route>
         </Router>
 
       </CloudinaryContext>
