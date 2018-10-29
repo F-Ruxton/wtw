@@ -2,9 +2,11 @@
   "name": "wtw",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.cloudinary.com/v1_1",
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "cloudinary": "^1.11.0",
     "cloudinary-core": "^2.5.0",
     "cloudinary-react": "^1.0.6",
     "lodash": "^4.17.10",

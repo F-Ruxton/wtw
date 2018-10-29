@@ -1,7 +1,7 @@
 ## ToDo
 
 - [ ] Cloudinary
-  - [ ] Environment variables for keys
+  - [-] Environment variables for keys
   - [ ] Images in grid gallery
   - [ ] Bringing images by folder
   - [ ] Bringing images by tag

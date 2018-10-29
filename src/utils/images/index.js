@@ -1,15 +1,11 @@
 import cloudinary from 'cloudinary-core';
 import axios from 'axios';
 import { Buffer } from 'buffer';
+import CloudinaryConfig from '../../config/cloudinary';
 
 export const CLOUDINARY_CLOUD_NAME = 'wtw';
 
-var cl = new cloudinary.Cloudinary({
-  cloud_name: CLOUDINARY_CLOUD_NAME,
-  api_key: '673113237363919',
-  api_secret: 'qoDrw71Cruf6_vCGRh4hnqjvl3o',
-  secure: true,
-});
+var cl = new cloudinary.Cloudinary(CloudinaryConfig);
 
 export default {
   getImage: async () => {

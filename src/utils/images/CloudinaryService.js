@@ -1,9 +1,30 @@
+import cloudinary from 'cloudinary'
 import { Cloudinary as CoreCloudinary, Util } from 'cloudinary-core';
+import CloudinaryConfig from '../../config/cloudinary';
+import axios from 'axios';
 
 export const url = (publicId, options) => {
-    const scOptions = Util.withSnakeCaseKeys(options);
-    const cl = CoreCloudinary.new();
-    return cl.url(publicId, scOptions);
+  const scOptions = Util.withSnakeCaseKeys(options);
+  const cl = CoreCloudinary.new(CloudinaryConfig);
+  // const cll = window.cloudinary
+  return cl.url(publicId, scOptions);
+};
+
+export const resources = async (publicId, options) => {
+  cloudinary.config(CloudinaryConfig);
+  // const scOptions = Util.withSnakeCaseKeys(options);
+  // const cl = CoreCloudinary.new(CloudinaryConfig);
+  // return cloudinary.v2.api.resources(function(error, result){console.log(result)});
+
+
+
+  var c = await cloudinary.api.resources({type: 'upload'}, function(error, result){});
+
+  console.log({cloudinary});
+  console.log({ c });
+
+  return c;
+  // return cl.url(publicId, scOptions);
 };
 
 export const openUploadWidget = (options, callback) => {
@@ -23,12 +44,16 @@ export const fetchPhotos = cloudName => {
         cloudName: cloudName,
         format: 'json',
         type: 'list',
-        version: Math.ceil(new Date().getTime() / 1000),
+        // version: Math.ceil(new Date().getTime() / 1000),
     };
 
-    const urlPath = url('myphotoalbum', options);
+    const urlPath = 'https://res.cloudinary.com/wtw/image/list/peatys.json'; //url('peatys', options);
+    // const urlPath = url('peatys', options);
 
-    return fetch(urlPath)
-        .then(res => res.text())
-        .then(text => (text ? JSON.parse(text).resources : []));
+    console.log({urlPath});
+
+    return resources();
+    // return axios.get(urlPath)
+    //     .then(res => res.text())
+    //     .then(text => (text ? JSON.parse(text).resources : []));
 };

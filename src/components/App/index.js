@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { CloudinaryContext, Image } from 'cloudinary-react';
 import { photosFetched } from '../../actions';
 import PhotoListContainer from '../PhotoList';
-import { fetchPhotos } from '../../utils/images/CloudinaryService';
+import { fetchPhotos, resources } from '../../utils/images/CloudinaryService';
 
 import Nav from '../Nav';
 import Footer from '../Footer';
@@ -16,8 +16,18 @@ import './styles.css';
 
 
 class App extends Component {
-  componentDidMount() {
-    fetchPhotos(this.props.cloudName).then(this.props.onPhotosFetched);
+  async componentDidMount() {
+    const { cloudName, onPhotosFetched } = this.props;
+
+    const photos = await fetchPhotos(cloudName);
+    const availableResources = await resources();
+
+    console.log('photos');
+    console.log(photos);
+    console.log('resources');
+    console.log(resources);
+
+    onPhotosFetched(photos);
   }
 
   render() {
