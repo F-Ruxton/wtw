@@ -7,11 +7,9 @@ import { projects, team } from '../../../assets/images';
 import { getHashSectionFromProps } from '../../../utils/navigation';
 import aboutSections from '../About/sections';
 import routes from '../routes';
-import './styles.css';
-
 import { Image } from 'cloudinary-react';
-
 import ScrollTo from '../../ScrollTo';
+import './styles.css';
 
 const cName = 'Home';
 
@@ -63,26 +61,15 @@ const links = [
 const LoadablePage = Loadable.Map({
   loader: {
     Landing : () => import('../../Landing'),
-    About   : () => import('../../Gallery'),
   },
   loading: Loading,
   render(loaded, props) {
-    const { section } = props;
-
-    const Landing = loaded.Landing.default;
-    // const Contact = loaded.Contact.default;
-
+    const Landing        = loaded.Landing.default;
+    const { section }    = props;
     const isHomePageSect = isHomePageSection(section);
 
     return (
       <React.Fragment>
-
-      <Image
-        cloudName="wtw"
-        publicId="/projects/peatys/building/rollin_bwd_1LS.jpg"
-        width="0.5"
-        crop="scale"
-      />
 
         <ScrollTo scrollOnMount={isHomePageSect && section === LANDING}>
           <Landing />
@@ -100,11 +87,6 @@ const LoadablePage = Loadable.Map({
     );
   },
 });
-
-
-// <ScrollTo scrollOnMount={isHomePageSect && section === CONTACT}>
-//   <Contact />
-// </ScrollTo>
 
 export default class HomePage extends Component {
   render() {

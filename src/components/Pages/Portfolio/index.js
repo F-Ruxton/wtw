@@ -38,6 +38,19 @@ const images = _.shuffle([
   team.james.james_watering_1,
 ]);
 
+{/* This will render the image fetched from a remote HTTP URL using Cloudinary
+  <Image
+    type="fetch"
+    publicId="https://cloudinary.com/images/logo.png"
+    fetch-format="auto"
+    quality="auto"
+  /> */}
+
+// const { cloudName, onPhotosFetched } = this.props;
+// const photos = await fetchPhotos(cloudName);
+// const availableResources = await resources();
+// onPhotosFetched(photos);
+
 class Portfolio extends Component {
   render() {
     const heightOffset = getHeightOffset([

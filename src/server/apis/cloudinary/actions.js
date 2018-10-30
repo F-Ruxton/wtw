@@ -45,3 +45,12 @@ module.exports = {
   resources: resources,
   listTags: listTags,
 };
+
+
+// const options = {
+//   cloudName: cloudName,
+//   format: 'json',
+//   type: 'list',
+// };
+
+// const urlPath = 'https://res.cloudinary.com/wtw/image/list/peatys.json';
