@@ -3,7 +3,6 @@ import _ from 'lodash/fp';
 import Loadable from 'react-loadable';
 import Loading from '../../Loading'
 import A from '../../A';
-import { projects, team } from '../../../assets/images';
 import { getHashSectionFromProps } from '../../../utils/navigation';
 import aboutSections from '../About/sections';
 import routes from '../routes';
@@ -42,18 +41,18 @@ const LinkSection = ({ to, image, linkText, gradient }) => (
 const links = [
   {
     to: routes.about,
-    image: team.group.team_1,
+    image: 'team/group/team_1.jpg',
     linkText: 'About Us',
     gradient: 'linear-gradient(55deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5))',
   },
   {
     to: routes.portfolio,
-    image: projects.peatys.trail.trail_roller_closeup_1,
+    image: 'projects/peatys/trail/roller_closeup_1.jpg',
     linkText: 'Portfolio'
   },
   {
     to: routes.contact,
-    image: projects.peatys.trail.trail_roller_closeup_1,
+    image: 'projects/peatys/trail/roller_closeup_1.jpg',
     linkText: 'Contact'
   },
 ];

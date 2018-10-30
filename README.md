@@ -1,13 +1,12 @@
 ## ToDo
 
 - [ ] Cloudinary
-  - [ ] Small express server to proxy third party apis hosted on aws or godaddy vps
+  - [-] Small express server to proxy third party apis hosted on aws or godaddy vps
   - [-] Environment variables for keys
   - [ ] Images in grid gallery
   - [ ] Bringing images by folder
   - [ ] Bringing images by tag
   - [ ] Long term - automatic copying of images from drive
-
 
 
 - [ ] General
@@ -34,6 +33,7 @@
   - [-] BUG: 404 on home page
 
 - [ ] Landing page
+  - [ ] Use cloudinary images
   - [ ] Landing section
     - [ ] Text over image?
     - [ ] Fill page

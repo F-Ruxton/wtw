@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import FillImage from '../FillImage';
-import { projects } from '../../assets/images';
+import { Image } from 'cloudinary-react';
 import './styles.css';
 
 const cName = 'Landing';
+
+const imgPublicId = "projects/peatys/trail/berms_1LB.jpg";
 
 class Landing extends Component {
   render() {
     return (
       <div className={cName}>
-        <FillImage
+        <Image
           className={`${cName}__img`}
-          withBorder={false}
-          image={projects.peatys.trail.trail_berms_1}
+          publicId={imgPublicId}
         />
       </div>
     );
