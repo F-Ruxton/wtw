@@ -13,29 +13,17 @@ const _resources_by_context    = (options, cb) => api.resources_by_context   (op
 const _resources_by_moderation = (options, cb) => api.resources_by_moderation(options, cb);
 
 const resourceOptionsDefaults = {
-  // resource_type: '',
   type  : 'image',
-  prefix: '',
-  // public_ids: [],
-  // context: '',
 };
 
-const withDefaults = options => _.defaultsDeep(options, resourceOptionsDefaults);
-
-function sender(response) {
-  return function (error, result) {
-    console.log();
-    console.log("result");
-    console.log(result);
-    console.log();
-    response.json(result);
-  }
-}
+const getSetup = (req, res) => ({
+  method : _.get(['body', 'method'], req),
+  options: _.defaultsDeep(resourceOptionsDefaults, _.get('body.options', req)),
+  const  : (error, result) => res.json(result),
+});
 
 function resources (req, res) {
-  const method  = _.get(['body', 'method'], req);
-  const options = withDefaults(_.get('body.options', req));
-  const send    = sender(res);
+  const { method, options, send } = getSetup(req, res);
 
   switch (method) {
     case 'get'              : _resources              (options, send); break;
@@ -48,8 +36,7 @@ function resources (req, res) {
 };
 
 function listTags(req, res) {
-  const options = withDefaults(_.get('body.options', req));
-  const send    = sender(res);
+  const { options, send } = getSetup(req, res);
 
   cloudinary.api.tags(options, send);
 }

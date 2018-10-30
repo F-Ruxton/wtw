@@ -6,9 +6,27 @@ import axios from 'axios';
 export const url = (publicId, options) => {
   const scOptions = Util.withSnakeCaseKeys(options);
   const cl = CoreCloudinary.new(CloudinaryConfig);
-  // const cll = window.cloudinary
   return cl.url(publicId, scOptions);
 };
+
+export const fetchPhotoUrls = async ({ method = 'get', options = {} }) => {
+  const resources = await axios.post('/resources', options);
+
+  return resources;
+}
+
+    // const { cloudName, onPhotosFetched } = this.props;
+    // const photos = await fetchPhotos(cloudName);
+    // const availableResources = await resources();
+    // onPhotosFetched(photos);
+
+    {/* This will render the image fetched from a remote HTTP URL using Cloudinary
+        <Image
+          type="fetch"
+          publicId="https://cloudinary.com/images/logo.png"
+          fetch-format="auto"
+          quality="auto"
+        /> */}
 
 export const resources = async (publicId, options) => {
   cloudinary.config(CloudinaryConfig);
