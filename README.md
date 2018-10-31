@@ -60,7 +60,8 @@
 
 - [ ] Portfolio page
   - [-] Routing for project pages
-  - [ ] Wheel selector (use simpler for now)
+  - [-] Project selector
+  - [ ] Wheel selector
   - [ ] Look at individual
 
 - [ ] Not found page

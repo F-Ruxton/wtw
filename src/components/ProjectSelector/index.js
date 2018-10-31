@@ -32,7 +32,6 @@ const ProjectSelector = ({ images = {}, projects = [] }) => {
   const pr = [
     _.merge(peatysProject, { linkImg: peatys_link_img }),
   ];
-  console.log(pr);
 
   return (
     <div className={cName}>

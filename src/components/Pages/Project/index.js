@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../../Header';
 import './styles.css';
 
 const cName = 'Project';
@@ -34,9 +35,22 @@ const cName = 'Project';
 // onPhotosFetched(photos);
 
 
-const Project = () => (
+const Project = ({
+  id         = 'peatys',
+  title      = 'Peatys',
+  name       = 'Peatys',
+  gallery    = [],
+  text       = [],
+  textImages = [],
+}) => (
   <div className={cName}>
-    Project goes here
+    <div className={`${cName}__header`}>
+      <Header>{title}</Header>
+    </div>
+
+    <div className={`${cName}__gallery`}>
+      Gallery here
+    </div>
   </div>
 );
 
