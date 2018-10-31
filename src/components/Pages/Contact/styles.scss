@@ -2,7 +2,7 @@
 @import 'styles/section.scss';
 
 .Contact {
-  @extend %section;
+  @include section-fill-page(290px);
   font-size: 30px;
 
   &__box {

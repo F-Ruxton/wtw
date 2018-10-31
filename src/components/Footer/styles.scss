@@ -3,5 +3,82 @@
 .Footer {
   height: $footer-height;
   font-size: $font-size-sm;
-  padding: 10px 0;
+  padding: 30px 0;
+
+  &__row-main {
+    align-items: flex-start;
+    flex-direction: column;
+
+    @media screen and (min-width: 780px) {
+      flex-direction: row;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+
+    @media screen and (min-width: 780px) {
+      flex-direction: row;
+      width: 66%;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    &--ctr {
+      padding: 5px 0 0 5px;
+    }
+
+    &--link {
+      margin: 5px 0;
+    }
+  }
+
+  &__site-links, &__social-media {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 780px) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__last-section {
+    width: 100%;
+
+    @media screen and (min-width: 780px) {
+      flex-grow: 1;
+    }
+  }
+
+  &__credit {
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__scroll-top {
+    &--left {
+      margin-bottom: 15px;
+
+      @media screen and (min-width: 780px) {
+        display: none;
+      }
+    }
+
+    &--right {
+      margin-bottom: 15px;
+      display: none;
+
+      @media screen and (min-width: 780px) {
+        display: flex;
+      }
+    }
+  }
 }

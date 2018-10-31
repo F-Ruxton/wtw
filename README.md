@@ -33,7 +33,7 @@
   - [-] BUG: 404 on home page
 
 - [ ] Landing page
-  - [ ] Use cloudinary images
+  - [-] Use cloudinary images
   - [ ] Landing section
     - [ ] Text over image?
     - [ ] Fill page
@@ -58,7 +58,7 @@
     - [-] Add background image
 
 - [ ] Portfolio page
-  - [ ] Routing for project pages
+  - [-] Routing for project pages
   - [ ] Wheel selector (use simpler for now)
   - [ ] Look at individual
 
@@ -66,9 +66,9 @@
   - [ ] Not found rock pile
   - [-] Add home link
 
-- [ ] Footer
-  - [ ] General styling
-  - [ ] Site links
-  - [ ] Back to top
-  - [ ] Social media links
+- [-] Footer
+  - [-] General styling
+  - [-] Site links
+  - [-] Back to top
+  - [-] Social media links
   - [-] Add kk credit

@@ -3,14 +3,16 @@
 .ProjectSelector {
   @include section-fill-page(280px);
   height: initial;
+  min-height: calc(100vh - 400px);
+  margin: 20px;
 
   &__projects {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
   }
 
   &__link {
-    height: fit-content;
-    width: auto;
+    height: 400px;
+    // width: auto;
   }
 }

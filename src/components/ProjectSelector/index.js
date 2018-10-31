@@ -46,9 +46,12 @@ const ProjectSelector = ({ projects = [] }) => {
                 { quality: 'auto', fetchFormat: 'auto' },
                 // { height: '400' },
               ]}
-              height="400"
+              dpr="auto"
               responsive
+              // height="400"
               width="auto"
+              crop="scale"
+              // width="auto"
             />
           ), pr) }
       </div>

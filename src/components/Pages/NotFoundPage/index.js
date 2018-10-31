@@ -9,9 +9,9 @@ const cName = 'NotFoundPage';
 
 const NotFoundPage = () => (
   <div className={cName}>
-    <div className={`${cName}__image`}>
+    {/* <div className={`${cName}__image`}>
       <FillImage />
-    </div>
+    </div> */}
 
     <div className={`${cName}__text`}>
       <Header className={`${cName}__header`}>Page not found.</Header>

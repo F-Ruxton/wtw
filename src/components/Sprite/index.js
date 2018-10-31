@@ -10,10 +10,11 @@ const Sprite = ({
   imageProps = {},
   linkProps = {},
   children,
+  rowStyle = {},
 }) => (
   <div className={cName}>
     <A {...linkProps}>
-      <Row>
+      <Row style={rowStyle}>
         <Image className={`${cName}__img`} {...imageProps} />
 
         { !_.isEmpty(children) && <div className={`${cName}__children`}>{children}</div> }
