@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash/fp';
 import Loadable from 'react-loadable';
 import Loading from '../../Loading';
 import { getHashSectionFromProps } from '../../../utils/navigation';

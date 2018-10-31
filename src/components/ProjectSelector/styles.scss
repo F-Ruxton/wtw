@@ -1,3 +1,16 @@
-.ProjectSelector {
+@import 'styles/section.scss';
 
+.ProjectSelector {
+  @include section-fill-page(280px);
+  height: initial;
+
+  &__projects {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    height: fit-content;
+    width: auto;
+  }
 }

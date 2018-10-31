@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
-import { Image } from 'cloudinary-react';
 import Landing from '../../Landing';
 import { fetchImageByTag } from '../../../utils/images';
-import A from '../../A';
 import aboutSections from '../About/sections';
 import routes from '../routes';
 import ScrollTo from '../../ScrollTo';
+import LinkImage from '../../LinkImage';
 import './styles.css';
 
 const cName = 'Home';
@@ -17,37 +16,13 @@ export const CONTACT = 'CONTACT';
 
 const isHomePageSection = section => _.includes(section, [LANDING, ABOUT, CONTACT]);
 
-const toBackgroundImage = (gradient, image) => _.flow(
-    _.compact,
-    _.join(','),
-)([gradient, `url("${image.src}")`]);
-
-const LinkSection = ({ to, img, linkText, gradient }) => (
-  <div className={`${cName}__link--ctr`}>
-    <A to={to} className={`${cName}__link`}>
-      <Image
-        className={`${cName}__link--img`}
-        publicId={_.get('public_id', img)}
-      />
-      <div className={`${cName}__link--text`}>
-        { linkText }
-      </div>
-    </A >
-  </div>
-);
-
 export const landingImageTags = {
   landing_main      : 'landing_main',
   landing_about     : 'landing_about',
   landing_portfolio : 'landing_portfolio',
   landing_contact   : 'landing_contact',
 };
-const {
-  landing_main,
-  landing_about,
-  landing_portfolio,
-  landing_contact,
-} = landingImageTags;
+const { landing_main, landing_about, landing_portfolio, landing_contact } = landingImageTags;
 
 const links = [
   {
@@ -121,7 +96,7 @@ export default class Home extends Component {
         </div>
 
         <div className={`${cName}__links`}>
-          { _.map(link => <LinkSection key={link.to} {...link} />, linksWithImgs) }
+          { _.map(link => <LinkImage key={link.to} {...link} />, linksWithImgs) }
         </div>
 
       </React.Fragment>

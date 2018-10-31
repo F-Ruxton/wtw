@@ -1,0 +1,46 @@
+@import 'styles/button.scss';
+
+.LinkImage {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-size:cover;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  margin: 40px;
+  position: relative;
+
+  &__link {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      .LinkImage__text {
+        text-decoration: underline;
+      }
+    }
+    // @extend %button;
+    // font-size: 40px;
+    // height: 60px;
+    // position: absolute;
+    // right: 15%;
+    // top: 15%;
+
+  }
+
+  &__img {
+  }
+
+  &__text {
+    @extend %button;
+    font-size: 40px;
+    height: 60px;
+    position: absolute;
+    right: 15%;
+    top: 15%;
+  }
+}
