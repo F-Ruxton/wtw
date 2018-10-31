@@ -27,9 +27,6 @@ const peatysProject = {
 const ProjectSelector = ({ projects = [] }) => {
   const pr = [
     peatysProject,
-    peatysProject,
-    peatysProject,
-    peatysProject,
   ];
 
   return (
@@ -46,12 +43,6 @@ const ProjectSelector = ({ projects = [] }) => {
                 { quality: 'auto', fetchFormat: 'auto' },
                 // { height: '400' },
               ]}
-              dpr="auto"
-              responsive
-              // height="400"
-              width="auto"
-              crop="scale"
-              // width="auto"
             />
           ), pr) }
       </div>

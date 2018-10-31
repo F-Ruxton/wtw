@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Logo from '../Logo';
-import { SMALL, MEDIUM } from '../../utils/sizes';
+import { MEDIUM } from '../../utils/sizes';
 import './styles.css';
 
 const cName = 'Masthead';

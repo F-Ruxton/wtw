@@ -27,7 +27,8 @@
     - [-] Rocks simply links
     - [-] scroll to section on page load
   - [ ] Rock hamburger on mobile
-  - [ ] Masthead responsive
+  - [-] Menu on mobile
+  - [-] Masthead responsive
   - [-] BUG: Scrolling links not working
   - [-] Switch back to portfolio rock
   - [-] BUG: 404 on home page

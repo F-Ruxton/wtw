@@ -3,6 +3,7 @@ import _ from 'lodash/fp';
 import Image from '../Image';
 import Row from '../Row';
 import A from '../A';
+import './styles.css';
 
 const cName = 'Sprite';
 

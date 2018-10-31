@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../../Header';
-import FillImage from '../../FillImage';
 import A from '../../A';
 import pages from '../';
 import './styles.css';

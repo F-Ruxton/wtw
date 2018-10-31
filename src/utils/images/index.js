@@ -24,10 +24,6 @@ export const fetchImageByTag = async (tag) => {
   return _.get(['data', 'resources', 0], mainImg);
 }
 
-
 export const fetchPhotos = () => {
-  return resources();
-  // return axios.get(urlPath)
-  //     .then(res => res.text())
-  //     .then(text => (text ? JSON.parse(text).resources : []));
+  return resources({});
 };

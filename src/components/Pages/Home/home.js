@@ -27,18 +27,18 @@ const { landing_main, landing_about, landing_portfolio, landing_contact } = land
 const links = [
   {
     to: routes.about,
-    imageTag: landing_about,
+    tag: landing_about,
     linkText: 'About Us',
     gradient: 'linear-gradient(55deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5))',
   },
   {
     to: routes.portfolio,
-    imageTag: landing_portfolio,
+    tag: landing_portfolio,
     linkText: 'Portfolio'
   },
   {
     to: routes.contact,
-    imageTag: landing_contact,
+    tag: landing_contact,
     linkText: 'Contact'
   },
 ];
@@ -78,11 +78,11 @@ export default class Home extends Component {
   }
 
   render() {
-    const { section }    = this.props;
-    const isHomePageSect = isHomePageSection(section);
-    const { images }     = this.state;
-    const { landing_main }    = images;
-    const linksWithImgs  = _.map(link => ({ ...link, img: images[link.imageTag] }), links);
+    const { section }      = this.props;
+    const isHomePageSect   = isHomePageSection(section);
+    const { images }       = this.state;
+    const { landing_main } = images;
+    const linksWithImgs    = _.map(link => ({ ...link, img: images[link.tag] }), links);
 
     return (
       <React.Fragment>

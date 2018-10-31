@@ -1,18 +1,33 @@
 @import 'styles/section.scss';
 
 .ProjectSelector {
-  @include section-fill-page(280px);
+  margin: auto;
+  padding: 50px;
+  max-width: 1200px;
   height: initial;
   min-height: calc(100vh - 400px);
-  margin: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 
   &__projects {
     display: flex;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__link {
     height: 400px;
-    // width: auto;
+    flex-grow: initial;
+
+    &__img {
+      width: 400px;
+    }
+
+    &__text {
+      right: 50%;
+      top: 50%;
+      transform: translate(50%, -50%);
+    }
   }
 }

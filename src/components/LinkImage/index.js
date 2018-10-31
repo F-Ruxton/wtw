@@ -18,7 +18,7 @@ const LinkImage = ({
   <div className={classNames(cName, className)}>
     <A to={to} className={`${cName}__link`}>
       <Image
-        className={`${cName}__img`}
+        className={classNames(`${cName}__img`, { [`${className}__img`]: className })}
         publicId={_.get('public_id', img)}
         {...imgProps}
       >
