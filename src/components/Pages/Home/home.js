@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
 import Landing from '../../Landing';
-import { fetchImageByTag } from '../../../utils/images';
 import aboutSections from '../About/sections';
 import routes from '../routes';
 import ScrollTo from '../../ScrollTo';
 import LinkImage from '../../LinkImage';
+import ImageFetch from '../../ImageFetch';
 import './styles.css';
 
 const cName = 'Home';
@@ -43,63 +43,33 @@ const links = [
   },
 ];
 
-export default class Home extends Component {
-  constructor() {
-    super();
+const requestList = _.map(
+  tag => ({ name: tag, type: 'tag', tag }),
+  [landing_main, landing_about, landing_portfolio, landing_contact]
+);
 
-    this.state = {
-      images: {
-        landing_main     : undefined,
-        landing_about    : undefined,
-        landing_portfolio: undefined,
-        landing_contact  : undefined,
-      },
-    };
-  }
+const Home = ({ images = {}, section }) => {
+  const isHomePageSect   = isHomePageSection(section);
+  const { landing_main } = images;
+  const linksWithImgs    = _.map(link => ({ ...link, img: images[link.tag] }), links);
 
-  async componentDidMount() {
-    this.getImages();
-  }
+  return (
+    <React.Fragment>
 
-  async getImages() {
-    this.setImage(landing_main,      await fetchImageByTag(landing_main));
-    this.setImage(landing_about,     await fetchImageByTag(landing_about));
-    this.setImage(landing_portfolio, await fetchImageByTag(landing_portfolio));
-    this.setImage(landing_contact,   await fetchImageByTag(landing_contact));
-  }
+      <ScrollTo scrollOnMount={isHomePageSect && section === LANDING}>
+        <Landing img={landing_main} />
+      </ScrollTo>
 
-  setImage(name, img) {
-    if (_.isUndefined(img)) { return; }
+      <div className={`${cName}__about-text`}>
+        {aboutSections.company.text}
+      </div>
 
-    const { images: oldImages } = this.state;
-    const images = _.merge(oldImages, { [name]: img });
+      <div className={`${cName}__links`}>
+        { _.map(link => <LinkImage key={link.to} {...link} />, linksWithImgs) }
+      </div>
 
-    this.setState({ images });
-  }
+    </React.Fragment>
+  );
+};
 
-  render() {
-    const { section }      = this.props;
-    const isHomePageSect   = isHomePageSection(section);
-    const { images }       = this.state;
-    const { landing_main } = images;
-    const linksWithImgs    = _.map(link => ({ ...link, img: images[link.tag] }), links);
-
-    return (
-      <React.Fragment>
-
-        <ScrollTo scrollOnMount={isHomePageSect && section === LANDING}>
-          <Landing img={landing_main} />
-        </ScrollTo>
-
-        <div className={`${cName}__about-text`}>
-          {aboutSections.company.text}
-        </div>
-
-        <div className={`${cName}__links`}>
-          { _.map(link => <LinkImage key={link.to} {...link} />, linksWithImgs) }
-        </div>
-
-      </React.Fragment>
-    );
-  };
-}
+export default ImageFetch(requestList, Home);

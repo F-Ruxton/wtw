@@ -1,33 +1,38 @@
 import React from 'react';
 import _ from 'lodash/fp';
 import LinkImage from '../LinkImage';
+import ImageFetch from '../ImageFetch';
 import routes from '../Pages/routes';
 import { getUrl } from '../../utils/navigation';
 import './styles.css';
 
 const cName = 'ProjectSelector';
 
+const projectImageTags = {
+  peatys_link_img: 'peatys_link_img',
+};
+const { peatys_link_img } = projectImageTags;
+
 const peatysProject = {
-  id: 'peatys',
-  title: 'Peatys',
-  name: 'Peatys',
+  id:       'peatys',
+  title:    'Peatys',
+  name:     'Peatys',
   linkText: 'Peatys',
-  linkImg: {
-    public_id: '/projects/peatys/building/rollin_fwd_1PS.jpg',
-    tag: 'peatys_link_img',
-  },
-  gallery: {
-    tag: 'peatys_gallery',
-  },
-  textImages: {
-    tag: 'peatys_text_img',
-  }
+  linkImg: {},
 };
 
-const ProjectSelector = ({ projects = [] }) => {
+const requestList = _.map(
+  tag => ({ name: tag, type: 'tag', tag }),
+  [peatys_link_img],
+);
+
+const ProjectSelector = ({ images = {}, projects = [] }) => {
+  const { peatys_link_img } = images;
+
   const pr = [
-    peatysProject,
+    _.merge(peatysProject, { linkImg: peatys_link_img }),
   ];
+  console.log(pr);
 
   return (
     <div className={cName}>
@@ -39,10 +44,14 @@ const ProjectSelector = ({ projects = [] }) => {
               to={getUrl(routes.project, { ':id': project.id })}
               linkText={project.linkText}
               img={project.linkImg}
-              transformations={[
-                { quality: 'auto', fetchFormat: 'auto' },
-                // { height: '400' },
-              ]}
+              style={{ opacity: 0.6 }}
+              // transformations={[
+              //   { quality: 'auto', fetchFormat: 'auto' },
+              //   // { height: '400' },
+              // ]}
+              // width="400"
+              // height="400"
+              // crop="fill"
             />
           ), pr) }
       </div>
@@ -50,4 +59,4 @@ const ProjectSelector = ({ projects = [] }) => {
   );
 }
 
-export default ProjectSelector;
+export default ImageFetch(requestList, ProjectSelector);

@@ -2,7 +2,6 @@
 
 .ProjectSelector {
   margin: auto;
-  padding: 50px;
   max-width: 1200px;
   height: initial;
   min-height: calc(100vh - 400px);
@@ -10,24 +9,33 @@
   display: flex;
   justify-content: center;
 
+  @media screen and (min-width: 500px) {
+    padding: 50px;
+  }
+
   &__projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   &__link {
-    height: 400px;
-    flex-grow: initial;
+    height: 300px;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 20px 0;
 
-    &__img {
-      width: 400px;
+    @media screen and (min-width: 500px) {
+      height: 400px;
     }
 
     &__text {
-      right: 50%;
-      top: 50%;
-      transform: translate(50%, -50%);
+      // right: 50%;
+      // top: 50%;
+      // right: 10%;
+      // top: 10%;
+      // transform: translate(50%, -50%);
     }
   }
 }

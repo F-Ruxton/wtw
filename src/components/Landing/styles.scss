@@ -2,12 +2,13 @@
 @import 'styles/section.scss';
 
 .Landing {
-  // @include section-fill-page(120px);
-  @include section-fill-page(0px);
-  margin-bottom: 30px;
+  margin: 30px 0;
   padding: 0;
+  height: calc(50vh - 180px);
+  display: flex;
+  justify-content: center;
 
-  &__img {
-    // border-bottom: 2px solid white;
+  @media screen and (min-width: 700px) {
+    height: calc(100vh - 180px);
   }
 }

@@ -15,7 +15,7 @@ export const resources = async ({ method = apiConstants.get, options = {} } = {}
   return resources;
 }
 
-export const fetchImageByTag = async (tag) => {
+export const fetchImageByTag = async tag => {
   const mainImg = await resources({
     method: apiConstants.get_by_tag,
     options: { type: 'upload', tag }
@@ -24,6 +24,11 @@ export const fetchImageByTag = async (tag) => {
   return _.get(['data', 'resources', 0], mainImg);
 }
 
-export const fetchPhotos = () => {
-  return resources({});
+export const fetchImage = (imgRequest = {}) => {
+  if (_.isEmpty(imgRequest)) { return {}; }
+
+  switch (imgRequest.type) {
+    case 'tag': return fetchImageByTag(imgRequest.tag);
+    default: return {};
+  }
 };

@@ -9,17 +9,15 @@ const FillImage = ({
   image: { src } = {},
   className = '',
   style = {},
-  withBorder = true,
+  withBorder = false,
   heightOffset = 0,
 }) => (
   <div
     className={
       classNames(
         cName,
-        {
-          [className]: !_.isEmpty(className),
-          [`${cName}__bordered`]: withBorder,
-        }
+        className,
+        { [`${cName}__bordered`]: withBorder }
       )
     }
     style={_.merge(style, {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
 import { Image } from 'cloudinary-react';
+import FillImage from '../FillImage';
 import './styles.css';
 import Loading from '../Loading';
 
@@ -14,9 +15,9 @@ class Landing extends Component {
       ? <Loading />
       : (
       <div className={cName}>
-        <Image
+        <FillImage
           className={`${cName}__img`}
-          publicId={img.public_id}
+          image={{ src: img.url }}
         />
       </div>
     );
