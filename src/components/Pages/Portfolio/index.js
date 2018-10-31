@@ -6,7 +6,7 @@ import FillImage from '../../FillImage';
 import Header from '../../Header';
 import { getHeightOffset } from '../../../styles/utils';
 import scssConstants from '../../../styles/constants';
-import WheelSelector from '../../WheelSelector';
+import ProjectSelector from '../../ProjectSelector';
 import './styles.css';
 
 export const PORTFOLIO = 'PORTFOLIO';
@@ -51,21 +51,23 @@ class Portfolio extends Component {
       50
     ]);
 
+    console.log({ props: this.props });
+
     return (
       <div className={cName}>
         <Header>Portfolio</Header>
 
-        <WheelSelector />
-
-        <div className={`${cName}__gallery`}>
-          <Slider settings={lazyLoadSettings}>
-            { _.map(imagePublicId => (
-              <Image key={imagePublicId} publicId={imagePublicId} />), images) }
-          </Slider>
-        </div>
+        <ProjectSelector />
       </div>
     );
   }
 }
+
+        // <div className={`${cName}__gallery`}>
+        //   <Slider settings={lazyLoadSettings}>
+        //     { _.map(imagePublicId => (
+        //       <Image key={imagePublicId} publicId={imagePublicId} />), images) }
+        //   </Slider>
+        // </div>
 
 export default Portfolio;
