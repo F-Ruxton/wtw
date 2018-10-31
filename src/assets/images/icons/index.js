@@ -3,6 +3,7 @@ import angleBrackets from './angle_brackets.svg';
 import camera        from './camera.svg';
 import arrow_up      from './arrow_up.svg';
 import arrow_back    from './arrow_back.svg';
+import menu          from './menu.svg';
 
 export default {
   instagramLogo: {
@@ -24,5 +25,9 @@ export default {
   arrow_back: {
     src: arrow_back,
     alt: 'Arrow back icon',
+  },
+  menu: {
+    src: menu,
+    alt: 'Menu icon',
   },
 };

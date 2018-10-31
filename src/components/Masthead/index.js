@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import Logo from '../Logo';
 import { SMALL, MEDIUM } from '../../utils/sizes';
 import './styles.css';
@@ -13,8 +14,11 @@ export default function Masthead (props) {
   return (
     <div className={cName}>
       <Logo size={size} />
-      <div className={`${cName}__text`}>
-        { size === SMALL ? 'WTW' : 'WHARNCLIFFE TRAILWORKS' }
+      <div className={classNames(`${cName}__text`, `${cName}__text--large`)}>
+        WHARNCLIFFE TRAILWORKS
+      </div>
+      <div className={classNames(`${cName}__text`, `${cName}__text--small`)}>
+        WTW
       </div>
     </div>
   );

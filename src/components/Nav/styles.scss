@@ -1,22 +1,76 @@
 @import 'styles/variables.scss';
 
 .Nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
-  background: $background-color;
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  padding: 10px;
-  z-index: $z-index-navbar;
+  z-index: 1;
 
-  &__buttons {
-    height: 100%;
+  &__wrapper {
+    z-index: $z-index-navbar;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: $background-color;
+    height: 80px;
+    padding: 10px;
+  }
+
+  &__dropdown {
+    height: 100%;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media screen and (min-width: $width-transition-menu) {
+      display: none;
+    }
+
+    &--icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      background: black;
+    }
+
+    &-menu {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      transform: translateY(-100%);
+      background: black;
+      border: 2px solid white;
+      transition: all 0.5s;
+
+      &--open {
+        transform: translateY(66%);
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  &__link {
+    &--link {
+      font-size: 40px;
+      padding: 20px;
+    }
+
+  }
+
+  &__buttons {
+    height: 100%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: $width-transition-menu) {
+      display: flex;
+    }
   }
 }
