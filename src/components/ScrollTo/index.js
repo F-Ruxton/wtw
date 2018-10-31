@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
-import { NAVBAR_HEIGHT } from '../../shared/sizes';
+import { NAVBAR_HEIGHT } from '../../utils/sizes';
 
 const cName = 'ScrollTo';
 

@@ -3,7 +3,7 @@ import _ from 'lodash/fp';
 import Row from '../Row';
 import Sprite from '../Sprite';
 import { icons } from '../../assets/images';
-import getContact, { contactTypes, contactNames } from '../../shared/contactDetails';
+import  getContact, { contactTypes, contactNames } from '../../utils/contacts';
 import './styles.css';
 
 const cName = 'Footer'

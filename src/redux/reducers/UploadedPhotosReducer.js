@@ -1,7 +1,7 @@
 import {
     UPDATE_UPLOADED_PHOTO,
     DELETE_UPLOADED_PHOTO,
-} from '../utils/images/Constants';
+} from '../../utils/images/constants';
 
 const UploadedPhotosReducer = (uploadedPhotos = [], action) => {
     switch (action.type) {

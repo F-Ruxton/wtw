@@ -2,7 +2,7 @@ import {
     PHOTOS_FETCHED,
     PHOTOS_UPLOADED,
     DELETE_UPLOADED_PHOTO,
-} from '../utils/images/Constants';
+} from '../../utils/images/constants';
 
 const PhotosListReducer = (photos = [], action) => {
     switch (action.type) {

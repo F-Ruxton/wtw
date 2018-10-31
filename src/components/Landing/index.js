@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import _ from 'lodash/fp';
 import { Image } from 'cloudinary-react';
 import './styles.css';
+import Loading from '../Loading';
 
 const cName = 'Landing';
 
-const imgPublicId = "projects/peatys/trail/berms_1LB.jpg";
-
 class Landing extends Component {
   render() {
-    return (
+    const { img } = this.props;
+
+    return _.isEmpty(img)
+      ? <Loading />
+      : (
       <div className={cName}>
         <Image
           className={`${cName}__img`}
-          publicId={imgPublicId}
+          publicId={img.public_id}
         />
       </div>
     );

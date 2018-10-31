@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash/fp';
 import { logos } from '../../assets/images/';
-import { SMALL, MEDIUM, LARGE, X_LARGE } from '../../shared/sizes';
+import { SMALL, MEDIUM, LARGE, X_LARGE } from '../../utils/sizes';
 import './styles.css';
 
 const cName = 'Logo';

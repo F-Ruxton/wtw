@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Logo';
-import { SMALL, MEDIUM } from '../../shared/sizes';
+import { SMALL, MEDIUM } from '../../utils/sizes';
 import './styles.css';
 
 const cName = 'Masthead';

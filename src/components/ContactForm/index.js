@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash/fp';
-import  getContact, { contactTypes, contactNames } from '../../shared/contactDetails';
+import  getContact, { contactTypes, contactNames } from '../../utils/contacts';
 import './styles.css';
 import Header from '../Header';
 import classnames from 'classnames';

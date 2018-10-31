@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash/fp';
 import Logo from '../Logo';
-import { MEDIUM } from '../../shared/sizes';
+import { MEDIUM } from '../../utils/sizes';
 import './styles.css';
 
 const cName = 'Loading';

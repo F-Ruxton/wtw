@@ -1,5 +1,5 @@
 import React from 'react';
-import getContact, { contactTypes, contactNames } from '../../shared/contactDetails';
+import getContact, { contactTypes, contactNames } from '../../utils/contacts';
 import './styles.css';
 
 const cName = 'ContactDetails';

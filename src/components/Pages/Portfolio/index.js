@@ -59,11 +59,8 @@ class Portfolio extends Component {
 
         <div className={`${cName}__gallery`}>
           <Slider settings={lazyLoadSettings}>
-            { _.map(image => (
-              <Image
-                key={imagePublicId}
-                publicId={imagePublicId}
-              />), images) }
+            { _.map(imagePublicId => (
+              <Image key={imagePublicId} publicId={imagePublicId} />), images) }
           </Slider>
         </div>
       </div>
