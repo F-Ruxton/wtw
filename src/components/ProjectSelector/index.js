@@ -27,7 +27,8 @@ const ProjectSelector = ({ images = {}, projects = [] }) => {
   return (
     <div className={cName}>
       <div className={`${cName}__projects`}>
-        { _.map(project => (
+        { !_.isEmpty(_.compact([peatys_link_img])) &&
+          _.map(project => (
             <LinkImage
               key={project.id + _.random(0, 100000)}
               className={`${cName}__link`}

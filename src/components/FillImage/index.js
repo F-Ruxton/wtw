@@ -21,7 +21,7 @@ const FillImage = ({
       )
     }
     style={_.merge(style, {
-      backgroundImage: `url(${src})`,
+      ...src && { backgroundImage: `url(${src})` },
       height: `calc(100vh - 100px - ${heightOffset})`,
     })}
   />

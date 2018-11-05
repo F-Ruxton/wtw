@@ -12,7 +12,7 @@ const imageRequest = [
   },
   {
     type: 'tag',
-    name: aboutImageTags.about_gallery,
+    name: aboutImageTags.about_team,
     tag: aboutImageTags.about_team,
     multiple: true,
   },

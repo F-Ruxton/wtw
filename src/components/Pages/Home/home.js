@@ -53,7 +53,13 @@ const Home = ({ images = {}, section }) => {
       </div>
 
       <div className={`${cName}__links`}>
-        { _.map(link => <LinkImage key={link.to} {...link} />, linksWithImgs) }
+        { _.map(link => (
+          <LinkImage
+            key={link.to}
+            className={`${cName}__link`}
+            {...link}
+          />
+        ), linksWithImgs) }
       </div>
 
     </React.Fragment>
