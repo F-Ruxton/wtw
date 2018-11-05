@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash/fp';
 
 const cName = 'About';
 
@@ -37,6 +38,62 @@ const philosophy = {
   ),
 };
 
+const rawProcessItems = [
+  {
+    header: 'Site visit and discussion',
+    body: 'Establish the needs of the client and understnad the materiality and nature of the place.'
+  },
+  {
+    header: 'Design, planning and consultancy',
+    body: 'Conceive of the best possible use of the trail area and provide the necessary steps to turn the concept into a workable strategy.',
+  },
+  {
+    header: 'Tree felling and clearing',
+    body: 'We are qualified chainsaw operators and can provide the means to clear the trail path responsibly.',
+  },
+  {
+    header: 'Plant operation',
+    body: 'We are qualified excavator and dumper operators to move the material required and proved losse form.',
+  },
+  {
+    header: 'Material construction',
+    body: 'Utilising the available materials to construct unique trail features. This can be in the form of dry stone walls and timber construction integrated into the trail.',
+  },
+  {
+    header: 'Trail formation',
+    body: 'This is the crucial step for exceptional trails. Analysis of the physics involved and precision sculpting will result in trails like no other.'
+  },
+  {
+    header: 'Testing',
+    body: 'All members of our team are experienced riders and provide the essential step of testing the product and modifying any imperfections.',
+  },
+  {
+    header: 'Finishing',
+    body: 'The trails are first compacted and then hand finished too provide and smooth riding surface and stunning visual appeal.',
+  },
+  {
+    header: 'Sculpture',
+    body: 'Though trails are scupltural in themselves, we thrive on creating additional scupltural pieces to enhance the atmosphere and sense of place.',
+  },
+  {
+    header: 'Practical use',
+    body: 'Through years of experience managing the trails in Wharncliffe, we understand the need for dedicated pathways and seating areas in order to make effective operation and use of the area possilbe.',
+  },
+];
+
+const processItems = _.chunk(rawProcessItems.length / 2, rawProcessItems);
+
+const ProcessItemList = ({ list }) => (
+  <div>
+    <ul className={`${cName}__process--list`}>
+      { _.map(item => (
+        <li key={item.header} className={`${cName}__process--item`}>
+          {item.header}
+        </li>), list) }
+    </ul>
+  </div>
+);
+
 const process = {
   heading: 'Process',
   text: (
@@ -46,37 +103,7 @@ const process = {
       </p>
 
       <div className={`${cName}__process--items`}>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Site visit and discussion</span> - Establish the needs of the client and understnad the materiality and nature of the place.
-        </p>
-
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Design, planning and consultancy</span> - Conceive of the best possible use of the trail area and provide the necessary steps to turn the concept into a workable strategy.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Tree felling and clearing</span> - We are qualified chainsaw operators and can provide the means to clear the trail path responsibly.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Plant operation</span> - We are qualified excavator and dumper operators to move the material required and proved losse form.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Material construction</span> - Utilising the available materials to construct unique trail features. This can be in the form of dry stone walls and timber construction integrated into the trail.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Trail formation</span> - This is the crucial step for exceptional trails. Analysis of the physics involved and precision sculpting will result in trails like no other.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Testing</span> - All members of our team are experienced riders and provide the essential step of testing the product and modifying any imperfections.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Finishing</span> - The trails are first compacted and then hand finished too provide and smooth riding surface and stunning visual appeal.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Sculpture</span> - Though trails are scupltural in themselves, we thrive on creating additional scupltural pieces to enhance the atmosphere and sense of place.
-        </p>
-        <p className={`${cName}__process--item`}>
-          <span className={`${cName}__emph`}>Practical use</span> - Through years of experience managing the trails in Wharncliffe, we understand the need for dedicated pathways and seating areas in order to make effective operation and use of the area possilbe.
-        </p>
+        { _.map(list => <ProcessItemList key={_.random(0, 10000)} list={list} />, processItems) }
       </div>
 
     </React.Fragment>

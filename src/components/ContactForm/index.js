@@ -27,13 +27,12 @@ const InputSection = ({ type, name, label = '' }) => (
     <br/>
     <Input name={name} type={type} />
     <br/>
-    <br/>
   </React.Fragment>
 );
 
 const TextArea = ({ name, label, rows = 6 }) => (
   <React.Fragment>
-    <label name={name}>{label}</label>
+    <Label name={name}>{label}</Label>
     <br/>
     <textarea
       className={classnames(`${cName}__input`, `${cName}__input--textarea`)}
@@ -41,7 +40,6 @@ const TextArea = ({ name, label, rows = 6 }) => (
       rows={rows}
       form={cName}
     />
-    <br/>
   </React.Fragment>
 );
 
@@ -51,7 +49,7 @@ const ContactForm = ({
   style = {},
 }) => (
   <div className={cName} style={style}>
-    { !hideTitle && <Header>{title}</Header> }
+    { !hideTitle && <Header className={`${cName}__header`}>{title}</Header> }
     <form
       className={`${cName}__form`}
       action={`mailto:${getContact(contactTypes.EMAIL, contactNames.INFO)}`}
@@ -59,10 +57,11 @@ const ContactForm = ({
       encType='text/plain'
       id={cName}
     >
-      <InputSection type='text' name='name' label='Name' />
-      <InputSection type='email' name='mail' label='Email' />
+      <InputSection type='text'  name='name'    label='Name' />
+      <InputSection type='email' name='mail'    label='Email' />
+      <InputSection type='text'  name='subject' label='Subject' />
       <TextArea name='message' label='Message' />
-      <br/>
+
       <input className={`${cName}__submit`} type='submit' value='Send'/>
       <input className={`${cName}__reset`}  type='reset' value='Reset'/>
     </form>

@@ -46,10 +46,10 @@
   - [ ] Split gallery to break up text?
 
 - [ ] Contact
-  - [ ] Text overflow when very narrow
-  - [ ] Contact us directly as a modal with button on Contact page
-  - [ ] Contact us directly as a modal available on every page
-  - [ ] Contact us directly reduce label size
+  - [-] Text overflow when very narrow
+  - [-] Contact us directly as a modal with button on Contact page
+  - [-] Contact us directly as a modal available on every page
+  - [-] Contact us directly reduce label size
 
 
 ## ToDo
