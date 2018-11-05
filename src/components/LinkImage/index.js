@@ -29,6 +29,7 @@ const LinkImage = ({
         </Image> */}
 
         <FillImage
+          className={`${cName}__img`}
           image={{ src: _.get('url', img) }}
           {...imgProps}
         />

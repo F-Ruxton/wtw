@@ -51,24 +51,24 @@ const TeamMemberImage = ({ image, heightOffset = 0, style = {} }) => (
   </div>
 );
 
-const TeamMemberText = ({ name, text }) => (
-  <React.Fragment>
-    <h3 className={`${cName}__team-member--name`}>{name}</h3>
-    <div className={`${cName}__team-member--text`}>
-      {text}
-    </div>
-  </React.Fragment>
-)
-
 const TeamMember = ({ name, image = {}, imageProps = {}, text, imageLeft = true }) => (
   <div
-    className={classNames(
-      `${cName}__team-member`,
-      `${cName}__team-member--${imageLeft ? 'left' : 'right'}`
-    )}
+    className={`${cName}__team-member`}
   >
-    { image.src && <div><TeamMemberImage image={image} {...imageProps} /></div> }
-    <div><TeamMemberText name={name} text={text} />       </div>
+    <h3 className={`${cName}__team-member--name`}>{name}</h3>
+
+    <div
+      className={classNames(
+        `${cName}__team-member--content`,
+        `${cName}__team-member--content--${imageLeft ? 'left' : 'right'}`
+      )}
+    >
+      { image.src && <div><TeamMemberImage image={image} {...imageProps} /></div> }
+
+      <div className={`${cName}__team-member--text`}>
+        {text}
+      </div>
+    </div>
   </div>
 );
 

@@ -1,4 +1,4 @@
-@import 'styles/button.scss';
+@import 'styles/mixins.scss';
 
 .LinkImage {
   flex-grow: 1;
@@ -33,11 +33,12 @@
   }
 
   &__img {
+    opacity: 0.9;
   }
 
   &__text {
     @extend %button;
-    font-size: 30px;
+    @include font-break(18px);
     height: 35px;
     position: absolute;
     right: 15%;

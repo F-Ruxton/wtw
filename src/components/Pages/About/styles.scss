@@ -1,25 +1,26 @@
 @import 'styles/variables.scss';
-@import 'styles/section.scss';
+@import 'styles/mixins.scss';
 
 .About {
-
   max-width: 1600px;
   margin: auto;
   font-size: 30px;
 
-  &__header {
-    margin-bottom: 30px;
-  }
-
   &__main-img {
     margin: 30px auto;
     padding: 0;
-    height: 30vh;
     width: auto;
     max-width: 1200px;
+    height: 30vh;
 
+    @media screen and (min-width: 500px) {
+      height: 50vh;
+    }
     @media screen and (min-width: 700px) {
       height: 60vh;
+    }
+    @media screen and (min-width: 960px) {
+      height: 65vh;
     }
   }
 
@@ -28,8 +29,12 @@
   }
 
   &__text {
-    font-size: $font-size-md;
-    padding: 20px;
+    @include font-break(calc(#{$font-size-md} - 10px));
+    padding-top: 20px;
+
+    @media screen and (min-width: 700px) {
+      padding: 20px;
+    }
   }
 
   &__heading {
@@ -53,7 +58,7 @@
     }
 
     &--item {
-      font-size: $font-size-md;
+      @include font-break(calc(#{$font-size-md} - 10px));
       margin: 20px;
 
       @media screen and (min-width: 700px) {
@@ -78,7 +83,7 @@
 
   &__team {
     @include section-fill-page(calc(140px + $header-height));
-    max-width: 1600px;
+    max-width: 1200px;
     padding: 0;
 
     &--row {
@@ -94,20 +99,34 @@
       flex-grow: 1;
       width: 90%;
       margin: auto;
-      padding: 30px;
-      display: flex;
-      align-items: center;
       @media screen and (min-width: 1600px) {
         width: 50%;
       }
 
-      &--right {
-        flex-direction: row-reverse;
+      &--content {
+        display: flex;
+        padding: 15px;
+        align-items: center;
+        flex-direction: column;
 
-        @media screen and (min-width: 1600px) {
+        @media screen and (min-width: 900px) {
+          padding: 30px;
           flex-direction: row;
         }
+
+        &--right {
+          flex-direction: column;
+
+          @media screen and (min-width: 900px) {
+            flex-direction: row-reverse;
+          }
+
+          @media screen and (min-width: 1600px) {
+            flex-direction: row;
+          }
+        }
       }
+
 
       &--img {
         height: 250px;
@@ -124,14 +143,22 @@
       }
 
       &--name {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 20px;
+        margin: 10px 0 0;
         font-weight: bold;
+
+        @media screen and (min-width: 900px) {
+          font-size: 24px;
+        }
       }
 
       &--text {
-        font-size: 20px;
-        margin: 0 20px;
+        @include font-break(calc(#{$font-size-md} - 10px));
+        margin: 10px;
+
+        @media screen and (min-width: 600px) {
+          margin: 20px;
+        }
       }
     }
   }

@@ -23,17 +23,16 @@
   - [ ] Hover on rocks
 
 - [ ] Home
-  - [ ] Landing image proportions below 700px
-  - [ ] Text font size, use font-break
-  - [ ] LinkImage font size, use font-break
-  - [ ] LinkImage
+  - [-] Landing image proportions below 700px
+  - [-] Text font size, use font-break
+  - [-] LinkImage font size, use font-break
 
 - [ ] About
-  - [ ] Landing image proportions below 700px
-  - [ ] Text font size, use font-break
+  - [-] Landing image proportions below 700px
+  - [-] Text font size, use font-break
   - [ ] Team containers
-    - [ ] Wrong narrow
-    - [ ] Padding mismatch when wide
+    - [-] Wrong narrow
+    - [-] Padding mismatch when wide
   - [ ] Debate hiding process
 
 - [ ] Portfolio

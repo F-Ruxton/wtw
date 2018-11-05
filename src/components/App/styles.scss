@@ -4,7 +4,11 @@
   background: $background-color;
   color: $text-color;
   height: fit-content;
-  padding: $nav-height 40px 0 40px;
+  padding: $nav-height 20px 0 20px;
+
+  @media screen and (min-width: 500px) {
+    padding: $nav-height 40px 0 40px;
+  }
 }
 
 .fade-enter {
