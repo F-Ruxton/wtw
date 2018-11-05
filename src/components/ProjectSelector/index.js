@@ -1,53 +1,59 @@
-import React from 'react';
-import _ from 'lodash/fp';
-import LinkImage from '../LinkImage';
-import routes from '../Pages/routes';
-import { getUrl } from '../../utils/navigation';
+import React          from 'react';
+import _              from 'lodash/fp';
+import LinkImage      from '../LinkImage';
+import routes         from '../Pages/routes';
+import { getUrl }     from '../../utils/navigation';
 import withImageFetch from '../../utils/images/withImageFetch';
-import imageRequest, { projectImageTags } from './imageRequest';
+import { findByTag }  from '../../utils/images';
 import './styles.css';
 
 const cName = 'ProjectSelector';
 
-const peatysProject = {
-  id:       'peatys',
-  title:    'Peatys',
-  name:     'Peatys',
-  linkText: 'Peatys',
-  linkImg: {},
-};
+const addProjectImages = images => project => {
+  const linkImg = _.get('linkImg', project);
+  const tag     = _.get(['request', 'tag'], linkImg);
+  const image   = findByTag(images, tag);
 
-const ProjectSelector = ({ images = {}, projects = [] }) => {
-  const { peatys_link_img } = images;
+  return {
+    ...project,
+    linkImg: {
+      ...linkImg,
+      ...image && { image }
+    },
+  }
+}
 
-  const pr = [
-    _.merge(peatysProject, { linkImg: peatys_link_img }),
-  ];
+const ProjectSelectorContent = ({ images = {}, projects: rawProjects = [] }) => {
+  const projects = _.map(addProjectImages(images), rawProjects);
 
   return (
     <div className={cName}>
       <div className={`${cName}__projects`}>
-        { !_.isEmpty(_.compact([peatys_link_img])) &&
+        { !_.isEmpty(images) &&
           _.map(project => (
             <LinkImage
-              key={project.id + _.random(0, 100000)}
+              key={_.get('id', project) + _.random(0, 100000)}
               className={`${cName}__link`}
-              to={getUrl(routes.project, { ':id': project.id })}
-              linkText={project.linkText}
-              img={project.linkImg}
+              to={getUrl(routes.project, { ':id': _.get('id', project) })}
+              linkText={_.get('linkText', project)}
+              img={_.get(['linkImg', 'image'], project)}
               style={{ opacity: 0.6 }}
-              // transformations={[
-              //   { quality: 'auto', fetchFormat: 'auto' },
-              //   // { height: '400' },
-              // ]}
-              // width="400"
-              // height="400"
-              // crop="fill"
             />
-          ), pr) }
+          ), projects) }
       </div>
     </div>
   );
 }
 
-export default withImageFetch(imageRequest, ProjectSelector);
+const ProjectSelector = ({ projects }) => {
+  const imageRequest = _.reduce(
+    (acc, project) => _.concat(acc, _.get(['linkImg', 'request'], project)),
+    [],
+    projects,
+  );
+  const ProjectSelectorWithImageRequest = withImageFetch(imageRequest, ProjectSelectorContent);
+
+  return <ProjectSelectorWithImageRequest projects={projects} />
+}
+
+export default ProjectSelector;

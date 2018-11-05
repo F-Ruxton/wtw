@@ -17,7 +17,6 @@ const LinkImage = ({
   // transformations,
   ...imgProps
 }) => {
-  console.log(img.url);
   return (
     <div className={classNames(cName, className)}>
       <A to={to} className={`${cName}__link`}>

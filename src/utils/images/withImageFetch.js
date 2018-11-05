@@ -4,7 +4,7 @@ import { fetchImage } from '.';
 
 export const toTagImageRequest = tags => _.map(tag => ({ name: tag, type: 'tag', tag }), tags);
 
-export default function withImageFetch(requestList, Compt) {
+export default function withImageFetch(imageRequest = [], Compt) {
   return class ImageFetchComponent extends Component {
     constructor() {
       super();
@@ -16,7 +16,7 @@ export default function withImageFetch(requestList, Compt) {
     }
 
     async getImages() {
-      requestList.forEach(async imgRequest => {
+      imageRequest.forEach(async imgRequest => {
         const image = await fetchImage(imgRequest);
 
         this.setImage(imgRequest.name, image);

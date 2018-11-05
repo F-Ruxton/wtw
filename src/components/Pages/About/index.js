@@ -47,7 +47,7 @@ const About = ({ images = {} }) => {
 
       <Header>About Us</Header>
 
-      { groupImg &&(
+      { groupImg && (
         <div className={`${cName}__main-img`}>
           <FillImage
             className={`${cName}__img`}

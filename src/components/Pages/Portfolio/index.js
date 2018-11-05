@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../Header';
 import ProjectSelector from '../../ProjectSelector';
+import projects from './projects';
 import './styles.css';
 
 export const PORTFOLIO = 'PORTFOLIO';
@@ -13,7 +14,11 @@ class Portfolio extends Component {
       <div className={cName}>
         <Header>Portfolio</Header>
 
-        <ProjectSelector />
+        <ProjectSelector
+          projects={[
+            projects.peatys,
+          ]}
+        />
       </div>
     );
   }
