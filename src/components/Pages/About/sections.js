@@ -45,37 +45,40 @@ const process = {
         At all stages of the build, Wharncliffe Trailworks have the necessary skills to be able to deliver a final product that will be love and enjoyed by all. Our process includes, but is not limited to.
       </p>
 
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Site visit and discussion</span> - Establish the needs of the client and understnad the materiality and nature of the place.
-      </p>
+      <div className={`${cName}__process--items`}>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Site visit and discussion</span> - Establish the needs of the client and understnad the materiality and nature of the place.
+        </p>
 
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Design, planning and consultancy</span> - Conceive of the best possible use of the trail area and provide the necessary steps to turn the concept into a workable strategy.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Tree felling and clearing</span> - We are qualified chainsaw operators and can provide the means to clear the trail path responsibly.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Plant operation</span> - We are qualified excavator and dumper operators to move the material required and proved losse form.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Material construction</span> - Utilising the available materials to construct unique trail features. This can be in the form of dry stone walls and timber construction integrated into the trail.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Trail formation</span> - This is the crucial step for exceptional trails. Analysis of the physics involved and precision sculpting will result in trails like no other.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Testing</span> - All members of our team are experienced riders and provide the essential step of testing the product and modifying any imperfections.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Finishing</span> - The trails are first compacted and then hand finished too provide and smooth riding surface and stunning visual appeal.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Sculpture</span> - Though trails are scupltural in themselves, we thrive on creating additional scupltural pieces to enhance the atmosphere and sense of place.
-      </p>
-      <p className={`${cName}__text`}>
-        <span className={`${cName}__emph`}>Practical use</span> - Through years of experience managing the trails in Wharncliffe, we understand the need for dedicated pathways and seating areas in order to make effective operation and use of the area possilbe.
-      </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Design, planning and consultancy</span> - Conceive of the best possible use of the trail area and provide the necessary steps to turn the concept into a workable strategy.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Tree felling and clearing</span> - We are qualified chainsaw operators and can provide the means to clear the trail path responsibly.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Plant operation</span> - We are qualified excavator and dumper operators to move the material required and proved losse form.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Material construction</span> - Utilising the available materials to construct unique trail features. This can be in the form of dry stone walls and timber construction integrated into the trail.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Trail formation</span> - This is the crucial step for exceptional trails. Analysis of the physics involved and precision sculpting will result in trails like no other.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Testing</span> - All members of our team are experienced riders and provide the essential step of testing the product and modifying any imperfections.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Finishing</span> - The trails are first compacted and then hand finished too provide and smooth riding surface and stunning visual appeal.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Sculpture</span> - Though trails are scupltural in themselves, we thrive on creating additional scupltural pieces to enhance the atmosphere and sense of place.
+        </p>
+        <p className={`${cName}__process--item`}>
+          <span className={`${cName}__emph`}>Practical use</span> - Through years of experience managing the trails in Wharncliffe, we understand the need for dedicated pathways and seating areas in order to make effective operation and use of the area possilbe.
+        </p>
+      </div>
+
     </React.Fragment>
   ),
 }

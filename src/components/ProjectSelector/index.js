@@ -1,17 +1,13 @@
 import React from 'react';
 import _ from 'lodash/fp';
 import LinkImage from '../LinkImage';
-import ImageFetch from '../ImageFetch';
 import routes from '../Pages/routes';
 import { getUrl } from '../../utils/navigation';
+import withImageFetch from '../../utils/images/withImageFetch';
+import imageRequest, { projectImageTags } from './imageRequest';
 import './styles.css';
 
 const cName = 'ProjectSelector';
-
-const projectImageTags = {
-  peatys_link_img: 'peatys_link_img',
-};
-const { peatys_link_img } = projectImageTags;
 
 const peatysProject = {
   id:       'peatys',
@@ -20,11 +16,6 @@ const peatysProject = {
   linkText: 'Peatys',
   linkImg: {},
 };
-
-const requestList = _.map(
-  tag => ({ name: tag, type: 'tag', tag }),
-  [peatys_link_img],
-);
 
 const ProjectSelector = ({ images = {}, projects = [] }) => {
   const { peatys_link_img } = images;
@@ -58,4 +49,4 @@ const ProjectSelector = ({ images = {}, projects = [] }) => {
   );
 }
 
-export default ImageFetch(requestList, ProjectSelector);
+export default withImageFetch(imageRequest, ProjectSelector);

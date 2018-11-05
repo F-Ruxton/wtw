@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
-import { fetchImage } from '../../utils/images';
+import { fetchImage } from '.';
 
-export default function ImageFetch(requestList, Compt) {
+export const toTagImageRequest = tags => _.map(tag => ({ name: tag, type: 'tag', tag }), tags);
+
+export default function withImageFetch(requestList, Compt) {
   return class ImageFetchComponent extends Component {
     constructor() {
       super();

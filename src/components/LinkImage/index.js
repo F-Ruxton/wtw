@@ -1,17 +1,18 @@
 import React from 'react';
 import _ from 'lodash/fp';
 import classNames from 'classnames';
-import { Image, Transformation } from 'cloudinary-react';
 import A from '../A';
-import './styles.css';
 import FillImage from '../FillImage';
+import './styles.css';
+
+// import { Image, Transformation } from 'cloudinary-react';
 
 const cName = 'LinkImage';
 
 const LinkImage = ({
   className,
   to,
-  img,
+  img = {},
   linkText,
   // transformations,
   ...imgProps

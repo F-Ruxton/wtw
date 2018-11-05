@@ -1,56 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import _ from 'lodash/fp';
+import classNames from 'classnames';
 import * as ReactGallery from 'react-grid-gallery';
+import Loading from '../Loading';
 import './styles.css';
 
 export const GALLERY = 'GALLERY';
 
 const cName = 'Gallery';
 
-const images = _.concat(
-  ['team/group/team_1.jpg'],
-  _.shuffle([
-    'projects/peatys/building/berm12_1.jpg',
-    'projects/peatys/building/berm1_1.jpg',
-    'projects/peatys/building/roller_close_1.jpg',
-    'projects/peatys/building/rollin_bwd.jpg',
-    'projects/peatys/building/rollin_fwd.jpg',
-    'projects/peatys/chainsaw/felling_1.jpg',
-    'projects/peatys/chainsaw/timber_1.jpg',
-    'projects/peatys/digger/bucket_closeup_1.jpg',
-    'projects/peatys/digger/dirt_falling_closeup_1.jpg',
-    'projects/peatys/digger/fred_james_1.jpg',
-    'projects/peatys/digger/fred_james_2.jpg',
-    'projects/peatys/handsculpt/james_1.jpg',
-    'projects/peatys/handsculpt/james_2.jpg',
-    'projects/peatys/handsculpt/james_rob_1.jpg',
-    'projects/peatys/handsculpt/rob_1.jpg',
-    'projects/peatys/trail/berms_1.jpg',
-    'projects/peatys/trail/roller_closeup_1.jpg',
-    'team/kk/kk_1.jpg',
-    'team/rob/rob_dirt_throw_1.jpg',
-    'team/rob/rob_slapping_1.jpg',
-    'team/james/james_slapping_1.jpg',
-    'team/james/james_watering_1.jpg',
-  ]),
-);
+const thumbnailHeight = 300;
 
-const galleryImages = _.map(image => ({
-  src: 'https://res.cloudinary.com/wtw/image/upload/' + image,
-  thumbnail: 'https://res.cloudinary.com/wtw/image/upload/' + image,
-  thumbnailHeight: 240,
-  thumbnailWidth: 240,
-}), images);
+const toGalleryImage = ({ url, width, height }) => ({
+  src: url,
+  thumbnail: url,
+  thumbnailHeight,
+  thumbnailWidth: (width * thumbnailHeight) / height,
+});
 
-class Gallery extends Component {
-  render() {
-    return (
-      <div className={cName}>
-        <ReactGallery  images={galleryImages} />
-        <div className={`${cName}__buffer`} />
-      </div>
-    );
-  }
+const toGalleryImages = images => _.flow(
+  _.filter('url'),
+  _.map(toGalleryImage),
+)(images);
+
+const Gallery = ({ images: rawImages = [], className }) => {
+  const images = toGalleryImages(rawImages);
+
+  return (
+    <div className={classNames(cName, className)}>
+      {
+        _.isEmpty(images)
+          ? <Loading />
+          : (
+            <React.Fragment>
+              <ReactGallery
+                images={images}
+                enableImageSelection={false}
+              />
+              <div className={`${cName}__buffer`} />
+            </React.Fragment>
+          )
+      }
+    </div>
+  );
 }
 
 export default Gallery;

@@ -1,3 +1,21 @@
+## Current
+
+- [ ] Images
+  - [ ] Images in grid gallery
+  - [ ] Gallery thumbnail proportions
+
+- [ ] Contact Section
+  - [ ] Check form works (set up info@wharncliffetrailworks.com)
+  - [ ] Replace email with picture
+
+- [ ] Responsive
+  - [ ] Home
+  - [ ] About
+  - [ ] Portfolio
+  - [ ] Project
+  - [ ] Contact
+
+
 ## ToDo
 
 - [ ] Cloudinary
@@ -13,6 +31,7 @@
   - [ ] Section padding
   - [ ] Responsive (have multiple image sizes)
   - [ ] Slider arrows
+  - [ ] Turn off back end and see what breaks
 
 - [ ] Content
   - [ ] Switch to gsuite

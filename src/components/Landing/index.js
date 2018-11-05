@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
-import { Image } from 'cloudinary-react';
 import FillImage from '../FillImage';
-import './styles.css';
 import Loading from '../Loading';
+import './styles.css';
+
+// import { Image } from 'cloudinary-react';
 
 const cName = 'Landing';
 

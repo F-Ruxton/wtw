@@ -18,10 +18,14 @@ export const resources = async ({ method = apiConstants.get, options = {} } = {}
 export const fetchImageByTag = async tag => {
   const mainImg = await resources({
     method: apiConstants.get_by_tag,
-    options: { type: 'upload', tag }
+    options: { type: 'upload', tag, tags: true }
   });
 
-  return _.get(['data', 'resources', 0], mainImg);
+  // console.log('image fetch by tag');
+  // console.log(tag);
+  // console.log(mainImg);
+
+  return _.get(['data', 'resources'], mainImg);
 }
 
 export const fetchImage = (imgRequest = {}) => {
@@ -32,3 +36,6 @@ export const fetchImage = (imgRequest = {}) => {
     default: return {};
   }
 };
+
+export const findByTag =
+  _.curry((imgs, tag) => _.find(img => _.includes(tag, _.get('tags', img)), imgs));
