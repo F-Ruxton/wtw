@@ -1,19 +1,56 @@
 ## Current
 
-- [ ] Images
-  - [ ] Images in grid gallery
-  - [ ] Gallery thumbnail proportions
+- [-] Images
+  - [-] Images in grid gallery
+  - [-] Gallery thumbnail proportions
 
 - [ ] Contact Section
   - [ ] Check form works (set up info@wharncliffetrailworks.com)
   - [ ] Replace email with picture
 
-- [ ] Responsive
-  - [ ] Home
-  - [ ] About
-  - [ ] Portfolio
-  - [ ] Project
-  - [ ] Contact
+### Style
+
+- [ ] General
+  - [ ] Consistent header positions
+  - [ ] Consistent page paddings and max-width
+  - [ ] Consistent break points - make a mixin
+  - [ ] Avoid footer scroll on short pages
+
+- [ ] Nav
+  - [-] Menu too wide when narrow, use font-break
+  - [-] Menu click outside to close
+  - [-] Scroll to top on page changes
+  - [ ] Hover on rocks
+
+- [ ] Home
+  - [ ] Landing image proportions below 700px
+  - [ ] Text font size, use font-break
+  - [ ] LinkImage font size, use font-break
+  - [ ] LinkImage
+
+- [ ] About
+  - [ ] Landing image proportions below 700px
+  - [ ] Text font size, use font-break
+  - [ ] Team containers
+    - [ ] Wrong narrow
+    - [ ] Padding mismatch when wide
+  - [ ] Debate hiding process
+
+- [ ] Portfolio
+  - [ ] LinkImage image not scaling when narrow
+  - [ ] LinkImage image offset when wide and single item
+  - [ ] LinkImage font size, use font-break
+
+- [ ] Project
+  - [ ] Header padding when very narrow
+  - [ ] Main image proportions when very wide
+  - [ ] Split gallery to break up text?
+
+- [ ] Contact
+  - [ ] Text overflow when very narrow
+  - [ ] Contact us directly as a modal with button on Contact page
+  - [ ] Contact us directly as a modal available on every page
+  - [ ] Contact us directly reduce label size
 
 
 ## ToDo
