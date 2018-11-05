@@ -12,9 +12,9 @@ const ContactDetails = ({
       <div>
         For any enquiries, please contact:
       </div>
-      <span className={`${cName}__detail--text`}>
+      <div className={`${cName}__detail--text`}>
         {getContact(contactTypes.EMAIL, contactNames.INFO)}
-      </span>
+      </div>
     </div>
 
     <div className={`${cName}__detail`}>

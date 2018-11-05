@@ -1,4 +1,25 @@
 .Project {
-  height: 200px;
+  margin: 30px auto;
+  min-height: calc(100vh - 350px);
+  max-width: 1400px;
   // border: 2px solid white;
+
+  &__header-img {
+    &--ctr {
+      height: 50vh;
+    }
+
+    &--img {
+
+    }
+  }
+
+  &__text {
+    margin: 30px 0;
+    font-size: 24px;
+
+    &--p {
+      margin: 20px 0;
+    }
+  }
 }

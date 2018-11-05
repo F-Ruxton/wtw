@@ -10,8 +10,8 @@ export const CONTACT = 'CONTACT';
 const cName = 'Contact';
 
 const boxStyle = {
-  margin: 20,
-  width: '50%',
+  // margin: 20,
+  // width: '50%',
 };
 
 class Contact extends Component {
@@ -20,7 +20,7 @@ class Contact extends Component {
       <div className={cName}>
         <Header>Contact</Header>
 
-        <Row style={{ alignItems: 'flex-start' }}>
+        <Row className={`${cName}__row`}>
           <ContactDetails style={boxStyle} />
 
           <ContactForm style={boxStyle} />

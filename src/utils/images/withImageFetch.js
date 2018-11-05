@@ -16,11 +16,13 @@ export default function withImageFetch(imageRequest = [], Compt) {
     }
 
     async getImages() {
-      imageRequest.forEach(async imgRequest => {
-        const image = await fetchImage(imgRequest);
+      if (!_.isEmpty(imageRequest)) {
+        imageRequest.forEach(async imgRequest => {
+          const image = await fetchImage(imgRequest);
 
-        this.setImage(imgRequest.name, image);
-      });
+          this.setImage(imgRequest.name, image);
+        });
+      }
     }
 
     setImage(name, img) {
