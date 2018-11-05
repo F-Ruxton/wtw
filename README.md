@@ -36,13 +36,13 @@
   - [ ] Debate hiding process
 
 - [ ] Portfolio
-  - [ ] LinkImage image not scaling when narrow
-  - [ ] LinkImage image offset when wide and single item
-  - [ ] LinkImage font size, use font-break
+  - [-] LinkImage image not scaling when narrow
+  - [-] LinkImage image offset when wide and single item
+  - [-] LinkImage font size, use font-break
 
 - [ ] Project
-  - [ ] Header padding when very narrow
-  - [ ] Main image proportions when very wide
+  - [-] Header padding when very narrow
+  - [-] Main image proportions when very wide
   - [ ] Split gallery to break up text?
 
 - [ ] Contact
