@@ -49,16 +49,30 @@
       transition: all 0.5s;
 
       &--open {
-        transform: translateY(66%);
+        transform: translateY(77%);
         transition: all 0.5s;
+      }
+
+      &-outside {
+        display: none;
+        z-index: -2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        &--open {
+          display: initial;
+        }
       }
     }
   }
 
   &__link {
     &--link {
-      font-size: 40px;
-      padding: 20px;
+      font-size: 25px;
+      padding: 10px;
     }
 
   }

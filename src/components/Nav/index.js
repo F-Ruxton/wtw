@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import _ from 'lodash/fp';
 import classNames from 'classnames';
+import { withRouter } from 'react-router';
 import A from '../A';
 import Image from '../Image';
 import Masthead from '../Masthead';
+import ScrollTo from '../ScrollTo';
 import { HomeRock, PortfolioRock, AboutRock, ContactRock } from '../Rocks/';
 import pages from '../Pages';
 import routes from '../Pages/routes';
@@ -29,6 +31,8 @@ const SiteLinks = ({ onClick }) => (
   </div>
 );
 
+const ScrollTopOnNavigate = withRouter(ScrollTo);
+
 class Nav extends Component {
   constructor() {
     super();
@@ -45,36 +49,45 @@ class Nav extends Component {
   render() {
     return (
       <div className={cName}>
-        <div className={`${cName}__wrapper`}>
-        <div className={`${cName}__masthead`}>
-          <A to={pages.home.path}><Masthead /></A>
-        </div>
+        <ScrollTopOnNavigate />
 
-        <div className={`${cName}__dropdown`}>
-          <div
-            className={`${cName}__dropdown--icon`}
-            onClick={this.toggleFocus}
-          >
-            <Image
-              image={icons.menu}
-              withBorder={false}
-              style={{ height: 30 }}
+        <div className={`${cName}__wrapper`}>
+          <div className={`${cName}__masthead`}>
+            <A to={pages.home.path}><Masthead /></A>
+          </div>
+
+          <div className={`${cName}__dropdown`}>
+            <div
+              className={`${cName}__dropdown--icon`}
+              onClick={this.toggleFocus}
+            >
+              <Image
+                image={icons.menu}
+                withBorder={false}
+                style={{ height: 30 }}
+              />
+            </div>
+            <div className={classNames(
+                `${cName}__dropdown-menu`,
+                { [`${cName}__dropdown-menu--open`]: this.state.menuOpen },
+              )}>
+              <SiteLinks onClick={this.toggleFocus} />
+            </div>
+            <div
+              className={classNames(
+                `${cName}__dropdown-menu-outside`,
+              { [`${cName}__dropdown-menu-outside--open`]: this.state.menuOpen },
+              )}
+              onClick={this.toggleFocus}
             />
           </div>
-          <div className={classNames(
-              `${cName}__dropdown-menu`,
-              { [`${cName}__dropdown-menu--open`]: this.state.menuOpen },
-            )}>
-            <SiteLinks onClick={this.toggleFocus} />
-          </div>
-        </div>
 
-        <div className={`${cName}__buttons`}>
-          <HomeRock />
-          <AboutRock />
-          <PortfolioRock />
-          <ContactRock />
-        </div>
+          <div className={`${cName}__buttons`}>
+            <HomeRock />
+            <AboutRock />
+            <PortfolioRock />
+            <ContactRock />
+          </div>
         </div>
       </div>
     );

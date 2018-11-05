@@ -11,23 +11,22 @@ export default class ScrollTo extends Component {
   }
 
   componentDidMount() {
-    if (this.props.scrollOnMount) {
-      this.onScroll();
-    }
+    this.onScroll();
   }
 
   componentDidUpdate() {
-    if (this.props.scrollOnMount) {
-      this.onScroll();
-    }
+    this.onScroll();
   }
 
   onScroll() {
-    const { scrollOffset = NAVBAR_HEIGHT } = this.props;
+    const {
+      scrollOnMount = true,
+      scrollOffset = NAVBAR_HEIGHT
+    } = this.props;
     const { id } = this.state;
     const elem = document.getElementById(`${cName}__${id}`);
 
-    if (!_.isNull(elem)) {
+    if (scrollOnMount && !_.isNull(elem)) {
       window.scrollTo({ top: elem.offsetTop - scrollOffset, behavior: 'smooth' })
     }
   }
