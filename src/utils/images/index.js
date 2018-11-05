@@ -15,24 +15,23 @@ export const resources = async ({ method = apiConstants.get, options = {} } = {}
   return resources;
 }
 
-export const fetchImageByTag = async tag => {
+export const fetchImageByTag = async ({ tag, multiple = false }) => {
   const mainImg = await resources({
     method: apiConstants.get_by_tag,
     options: { type: 'upload', tag, tags: true }
   });
+  const resourcesRaw = _.get(['data', 'resources'], mainImg);
 
-  // console.log('image fetch by tag');
-  // console.log(tag);
-  // console.log(mainImg);
-
-  return _.get(['data', 'resources'], mainImg);
+  return multiple
+    ? resourcesRaw
+    : _.head(resourcesRaw);
 }
 
 export const fetchImage = (imgRequest = {}) => {
   if (_.isEmpty(imgRequest)) { return {}; }
 
   switch (imgRequest.type) {
-    case 'tag': return fetchImageByTag(imgRequest.tag);
+    case 'tag': return fetchImageByTag(imgRequest);
     default: return {};
   }
 };
