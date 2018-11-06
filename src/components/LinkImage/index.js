@@ -14,20 +14,11 @@ const LinkImage = ({
   to,
   img = {},
   linkText,
-  // transformations,
   ...imgProps
 }) => {
   return (
     <div className={classNames(cName, className)}>
       <A to={to} className={`${cName}__link`}>
-        {/* <Image
-          className={classNames(`${cName}__img`, { [`${className}__img`]: className })}
-          publicId={_.get('public_id', img)}
-          {...imgProps}
-        >
-          { _.map(t => <Transformation key={_.random(0,100000)} {...t} />, transformations) }
-        </Image> */}
-
         <FillImage
           className={`${cName}__img`}
           image={{ src: _.get('url', img) }}

@@ -58,6 +58,7 @@ const Home = ({ images = {}, section }) => {
             key={link.to}
             className={`${cName}__link`}
             {...link}
+            style={{ opacity: 0.8 }}
           />
         ), linksWithImgs) }
       </div>

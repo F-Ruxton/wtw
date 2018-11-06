@@ -1,14 +1,5 @@
 ## Current
 
-- [ ] General
-  - [ ] Page change setState error
-
-- [ ] Navigation
-  - [ ] Rock hamburger on mobile
-
-- [ ] Home
-  - [ ] Opacity on portfolio page links
-
 - [ ] About
   - [ ] Team containers stacking wrong on wide
 
