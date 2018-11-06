@@ -1,66 +1,22 @@
 import React from 'react';
-import _ from 'lodash/fp';
 import Rock1 from './Rock1';
 import Rock2 from './Rock2';
 import Rock3 from './Rock3';
 import Rock4 from './Rock4';
-import { isHome } from '../../utils/navigation';
-import A from '../A';
 import pages from '../Pages';
+import A     from '../A';
 import './styles.css';
 
 const cName = 'Rock';
 
-const linkOrButtton = (handleClick, to = false) => {
-  if (!_.isFunction(handleClick)) {
-    return _.isUndefined(to) ? {} : { to };
-  }
+export const svgLayer  = 'rock-svg';
+export const cNameLine = 'rock-line';
+export const cNameFill = 'rock-fill';
+export const cNameText = 'rock-text';
 
-  return {
-    [isHome() ? 'onClick' : 'to']: isHome() ? handleClick : to,
-  };
-};
+const Rock = ({ to, children }) => <A to={to}><div className={cName}>{children}</div></A>;
 
-export const HomeRock = ({ handleClick, to = pages.home.path }) => (
-  <A {...linkOrButtton(handleClick, to)}>
-    <div className={cName}>
-        <div className={`${cName}__text`} style={{ left: 30 }}>
-          Home
-        </div>
-        <Rock1 style={{ height: 120, width: 110 }} />
-    </div>
-  </A>
-);
-
-export const PortfolioRock = ({ handleClick, to = pages.portfolio.path }) => (
-  <A {...linkOrButtton(handleClick, to)}>
-    <div className={cName}>
-      <div className={`${cName}__text`} style={{ left: 10 }}>
-        Portfolio
-      </div>
-      <Rock2 style={{ height: 100, width: 150 }} />
-    </div>
-  </A>
-);
-
-export const AboutRock = ({ handleClick, to = pages.about.path }) => (
-  <A {...linkOrButtton(handleClick, to)}>
-    <div className={cName}>
-      <div className={`${cName}__text`} style={{ left: 18 }}>
-        About
-      </div>
-      <Rock3 style={{ height: 100, width: 110 }} />
-    </div>
-  </A>
-);
-
-export const ContactRock = ({ handleClick, to = pages.contact.path }) => (
-  <A {...linkOrButtton(handleClick, to)}>
-    <div className={cName}>
-      <div className={`${cName}__text`} style={{ left: 11 }}>
-        Contact
-      </div>
-      <Rock4 style={{ height: 100, width: 120 }} />
-    </div>
-  </A>
-);
+export const HomeRock      = ({ to = pages.home.path })      => <Rock to={to}><Rock1 /></Rock>;
+export const AboutRock     = ({ to = pages.about.path })     => <Rock to={to}><Rock2 /></Rock>;
+export const PortfolioRock = ({ to = pages.portfolio.path }) => <Rock to={to}><Rock3 /></Rock>;
+export const ContactRock   = ({ to = pages.contact.path })   => <Rock to={to}><Rock4 /></Rock>;

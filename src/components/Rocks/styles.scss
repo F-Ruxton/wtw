@@ -1,50 +1,20 @@
 @import 'styles/variables.scss';
 
-%hover {
-  cursor: pointer;
-}
-
-.Rock {
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  position: relative;
-
-  &__text {
-    position: absolute;
-    font-size: 25px;
-
-    &:hover {
-      @extend %hover;
-    }
-
-    &:hover.rock-fill {
-      fill: $rock-yellow;
-    }
-  }
-}
-
 .rock-line {
   fill: $line-color;
-
-  &:hover.rock-fill {
-    fill: $rock-yellow;
-  }
-
-  &__hovered {
-    // fill: #5ba05b;
-  }
 }
-
 .rock-fill {
   fill: $fill-color;
-
-  &:hover {
-    fill: $rock-yellow;
-  }
-
-  &__hovered {
-    fill: $rock-yellow;
-  }
+}
+.rock-text {
+  fill: $line-color;
+  font-family: 'CourierNewPSMT';
+  font-size: 150px;
+  pointer-events: none;
+}
+#rock-svg:hover {
+  cursor: pointer;
+}
+#rock-svg:hover .rock-fill  {
+  fill: $rock-yellow;
 }

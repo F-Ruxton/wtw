@@ -99,7 +99,7 @@ const process = {
   text: (
     <React.Fragment>
       <p className={`${cName}__text`}>
-        At all stages of the build, Wharncliffe Trailworks have the necessary skills to be able to deliver a final product that will be love and enjoyed by all. Our process includes, but is not limited to.
+        At all stages of the build, Wharncliffe Trailworks have the necessary skills to be able to deliver a final product that will be loved and enjoyed by all. Our process includes, but is not limited to.
       </p>
 
       <div className={`${cName}__process--items`}>
