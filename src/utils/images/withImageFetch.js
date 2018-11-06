@@ -8,11 +8,19 @@ export default function withImageFetch(imageRequest = [], Compt) {
   return class ImageFetchComponent extends Component {
     constructor() {
       super();
-      this.state = { images: {} };
+      this.state = {
+        images: {},
+        _mount: false,
+      };
     }
 
     async componentDidMount() {
+      this._isMount = true;
       this.getImages();
+    }
+
+    componentWillUnmount() {
+      this._isMount = false;
     }
 
     async getImages() {
@@ -31,7 +39,9 @@ export default function withImageFetch(imageRequest = [], Compt) {
       const { images: oldImages } = this.state;
       const images = _.merge(oldImages, { [name]: img });
 
-      this.setState({ images });
+      if (this._isMount) {
+        this.setState({ images });
+      }
     }
 
     render() {
