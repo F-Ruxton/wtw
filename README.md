@@ -1,16 +1,9 @@
 ## Current
 
-- [ ] Portfolio page
-  - [ ] Page too short when wide
-
-- [ ] Contact
-  - [ ] Check form works (set up info@wharncliffetrailworks.com)
-  - [ ] Replace email with picture
-  - [ ] Page too short when wide
-
 ## Deploy
 
 - [ ] Go over all wording
+- [ ] Check about environment variables
 - [ ] Upload FE
 - [ ] Upload BE
 
@@ -49,6 +42,7 @@
   - [ ] Better team images
 
 - [ ] Contact
+  - [ ] Reinstate contact form
   - [ ] Check form works (set up info@wharncliffetrailworks.com)
   - [ ] Replace email with picture
 

@@ -9,22 +9,17 @@ export const CONTACT = 'CONTACT';
 
 const cName = 'Contact';
 
-const boxStyle = {
-  // margin: 20,
-  // width: '50%',
-};
-
 class Contact extends Component {
   render() {
     return (
       <div className={cName}>
         <Header>Contact</Header>
 
-        <Row className={`${cName}__row`}>
-          <ContactDetails style={boxStyle} />
+        <ContactDetails />
+        {/* <Row className={`${cName}__row`}>
 
           <ContactForm style={boxStyle} />
-        </Row>
+        </Row> */}
       </div>
     );
   }

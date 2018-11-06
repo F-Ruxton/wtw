@@ -52,7 +52,8 @@ const ContactForm = ({
     { !hideTitle && <Header className={`${cName}__header`}>{title}</Header> }
     <form
       className={`${cName}__form`}
-      action={`mailto:${getContact(contactTypes.EMAIL, contactNames.INFO)}`}
+      // action={`mailto:${getContact(contactTypes.EMAIL, contactNames.INFO)}`}
+      action={`mailto:fred@wharncliffetrailworks.com`}
       method='post'
       encType='text/plain'
       id={cName}

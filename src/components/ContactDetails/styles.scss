@@ -1,9 +1,6 @@
 @import 'styles/mixins.scss';
 
 .ContactDetails {
-  margin-right: 20px;
-  margin-bottom: 20px;
-
   &__detail {
     margin-bottom: 30px;
     @include font-break(16px);
