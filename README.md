@@ -1,25 +1,12 @@
 ## Current
 
-- [ ] About
-  - [ ] Team containers stacking wrong on wide
-
 - [ ] Portfolio page
   - [ ] Page too short when wide
-
-- [ ] Project
-  - [ ] Split gallery to break up text?
 
 - [ ] Contact
   - [ ] Check form works (set up info@wharncliffetrailworks.com)
   - [ ] Replace email with picture
   - [ ] Page too short when wide
-
-- [ ] Not found page
-  - [ ] Not found rock pile
-
-- [ ] Footer
-  - [ ] Further social media
-
 
 ## Deploy
 
