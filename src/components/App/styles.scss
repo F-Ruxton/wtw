@@ -5,6 +5,9 @@
   color: $text-color;
   height: fit-content;
   padding: $nav-height 20px 0 20px;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: 500px) {
     padding: $nav-height 40px 0 40px;
