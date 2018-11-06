@@ -1,21 +1,21 @@
 import React from 'react';
+import _ from 'lodash/fp';
 import { svgLayer, cNameLine, cNameFill, cNameText } from '.';
 
-const Rock4 = ({
-  style = {
-    enableBackground: "new 0 0 1088.9 567.5",
-    height: 120,
-    width: 110,
-  },
-  text = 'CONTACT',
-}) => (
+const defaultStyle = {
+  enableBackground: "new 0 0 1088.9 567.5",
+  width: 140,
+};
+
+const Rock4 = ({ style = {}, text = 'CONTACT' }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
-    viewBox="0 0 1044.9 521.4"
-    style={style}
+    // viewBox="0 0 1044.9 521.4"
+    viewBox="0 0 1258.3 521.2"
+    style={_.merge(defaultStyle, style)}
   >
     <g id={svgLayer}>
       <g id="Layer_1">
@@ -143,7 +143,7 @@ const Rock4 = ({
       </g>
       <g id="Layer_3">
         <text
-          transform="matrix(1 0 0 1 190 300.4999)"
+          transform="matrix(1 0 0 1 130 300.4999)"
           className={cNameText}
         >
           {text}

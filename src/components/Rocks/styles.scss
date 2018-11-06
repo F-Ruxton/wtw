@@ -1,5 +1,9 @@
 @import 'styles/variables.scss';
 
+.Rock {
+  display: flex;
+  align-items: baseline;
+}
 .rock-line {
   fill: $line-color;
 }
@@ -9,8 +13,12 @@
 .rock-text {
   fill: $line-color;
   font-family: 'CourierNewPSMT';
-  font-size: 150px;
+  font-size: 180px;
   pointer-events: none;
+
+  &__portfolio {
+    font-size: 160px;
+  }
 }
 #rock-svg:hover {
   cursor: pointer;

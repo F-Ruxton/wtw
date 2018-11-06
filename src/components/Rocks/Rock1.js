@@ -1,21 +1,20 @@
 import React from 'react';
+import _ from 'lodash/fp';
 import { svgLayer, cNameLine, cNameFill, cNameText } from '.';
 
-const Rock1 = ({
-  style = {
-    enableBackground: "new 0 0 1088.9 567.5",
-    height: 120,
-    width: 110,
-  },
-  text = 'HOME',
-}) => (
+const defaultStyle = {
+  enableBackground: "new 0 0 1088.9 567.5",
+  width: 140,
+};
+
+const Rock1 = ({ style = {}, text = 'HOME' }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
     viewBox="0 0 1258.3 521.2"
-    style={style}
+    style={_.merge(defaultStyle, style)}
   >
     <g id={svgLayer}>
       <g id="Layer_3">

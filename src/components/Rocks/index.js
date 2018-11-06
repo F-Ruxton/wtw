@@ -14,9 +14,9 @@ export const cNameLine = 'rock-line';
 export const cNameFill = 'rock-fill';
 export const cNameText = 'rock-text';
 
-const Rock = ({ to, children }) => <A to={to}><div className={cName}>{children}</div></A>;
+const Rock = ({ children, ...props }) => <A {...props}><div className={cName}>{children}</div></A>;
 
-export const HomeRock      = ({ to = pages.home.path })      => <Rock to={to}><Rock1 /></Rock>;
-export const AboutRock     = ({ to = pages.about.path })     => <Rock to={to}><Rock2 /></Rock>;
-export const PortfolioRock = ({ to = pages.portfolio.path }) => <Rock to={to}><Rock3 /></Rock>;
-export const ContactRock   = ({ to = pages.contact.path })   => <Rock to={to}><Rock4 /></Rock>;
+export const HomeRock      = props => <Rock {...props} to={pages.home.path}>     <Rock1 /></Rock>;
+export const AboutRock     = props => <Rock {...props} to={pages.about.path}>    <Rock2 /></Rock>;
+export const PortfolioRock = props => <Rock {...props} to={pages.portfolio.path}><Rock3 /></Rock>;
+export const ContactRock   = props => <Rock {...props} to={pages.contact.path}>  <Rock4 /></Rock>;

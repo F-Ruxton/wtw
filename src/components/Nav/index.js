@@ -36,9 +36,7 @@ const ScrollTopOnNavigate = withRouter(ScrollTo);
 class Nav extends Component {
   constructor() {
     super();
-    this.state = {
-      menuOpen: false,
-    }
+    this.state = { menuOpen: false };
     this.toggleFocus = this.toggleFocus.bind(this);
   }
 
@@ -83,7 +81,7 @@ class Nav extends Component {
           </div>
 
           <div className={`${cName}__buttons`}>
-            <HomeRock />
+            <HomeRock style={{ marginRight: -10 }} />
             <AboutRock />
             <PortfolioRock />
             <ContactRock />
