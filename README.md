@@ -1,6 +1,10 @@
 ## Current
 
-### Style
+- [ ] General
+  - [ ] Page change setState error
+
+- [ ] Navigation
+  - [ ] Rock hamburger on mobile
 
 - [ ] Home
   - [ ] Opacity on portfolio page links
@@ -8,11 +12,29 @@
 - [ ] About
   - [ ] Team containers stacking wrong on wide
 
-- [ ] Portfolio
-  - Page too short when wide
+- [ ] Portfolio page
+  - [ ] Page too short when wide
+
+- [ ] Project
+  - [ ] Split gallery to break up text?
 
 - [ ] Contact
-  - Page too short when wide
+  - [ ] Check form works (set up info@wharncliffetrailworks.com)
+  - [ ] Replace email with picture
+  - [ ] Page too short when wide
+
+- [ ] Not found page
+  - [ ] Not found rock pile
+
+- [ ] Footer
+  - [ ] Further social media
+
+
+## Deploy
+
+- [ ] Go over all wording
+- [ ] Upload FE
+- [ ] Upload BE
 
 ## ToDo
 
@@ -35,6 +57,7 @@
     - [ ] Folder per project with text and images
   - [ ] Gather more photos, see media folder
   - [ ] Embed instagram
+  - [ ] Media page
 
 - [ ] Navigation
   - [ ] Rock hamburger on mobile
