@@ -2,7 +2,7 @@ import _ from 'lodash/fp';
 import { Cloudinary as CoreCloudinary, Util } from 'cloudinary-core';
 import CloudinaryConfig from '../../config/cloudinary';
 import axios from 'axios';
-import apiConstants from '../../server/apis/cloudinary/contants';
+import apiConstants from '../../redux/apis/cloudinary/contants';
 
 export const url = (publicId, options) => {
   const scOptions = Util.withSnakeCaseKeys(options);
