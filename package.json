@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://wtw-be.herokuapp.com",
+  "engines": {
+    "node": "10.10.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
@@ -27,11 +30,13 @@
     "react-slick": "^0.23.1",
     "react-transition-group": "^2.5.0",
     "redux": "^4.0.1",
+    "serve": "^10.1.1",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start-dev": "npm-run-all -p watch-css start-js",
+    "start": "serve -s build",
     "start-backend": "node src/server",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
