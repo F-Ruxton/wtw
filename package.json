@@ -35,15 +35,13 @@
   },
   "scripts": {
     "start-js": "react-scripts start",
-    "start-dev": "npm-run-all -p watch-css start-js",
-    "start": "serve -s build",
+    "start": "npm-run-all -p watch-css start-js",
     "start-backend": "node src/server",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "yarn && yarn build"
+    "eject": "react-scripts eject"
   }
 }
