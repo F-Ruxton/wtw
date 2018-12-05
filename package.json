@@ -39,7 +39,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "start-backend": "node src/server",
     "build": "npm-run-all build-css build-js",
-    "build-js": "ls /tmp/build_*/src/utils/images/ && react-scripts build",
+    "build-js": "react-scripts build",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
