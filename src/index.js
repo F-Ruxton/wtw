@@ -7,7 +7,7 @@ import PhotosListReducer from './redux/reducers/PhotosListReducer';
 import UploadedPhotosReducer from './redux/reducers/UploadedPhotosReducer';
 import CloudinaryConfig from './config/cloudinary';
 import registerServiceWorker from './registerServiceWorker';
-// import './styles/global.css';
+import './styles/global.css';
 
 const rootReducer = combineReducers({
   photos: PhotosListReducer,
