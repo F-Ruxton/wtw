@@ -11,7 +11,7 @@ export const url = (publicId, options) => {
 };
 
 export const resources = async ({ method = apiConstants.get, options = {} } = {}) => {
-  const resources = await axios.post('https://git.heroku.com/wtw-be.git/resources', { method, options });
+  const resources = await axios.post('https://wtw-be.herokuapp.com/resources', { method, options });
   return resources;
 }
 
