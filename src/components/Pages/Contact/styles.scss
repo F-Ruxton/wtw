@@ -5,7 +5,14 @@
   @include section-fill-page(290px);
   height: initial;
   padding: initial;
+  max-width: 1600px;
   font-size: 30px;
+
+  &__header {
+    @media screen and (min-width: 780px) {
+      display: none;
+    }
+  }
 
   &__row {
     display: flex;

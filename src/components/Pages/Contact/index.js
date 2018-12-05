@@ -13,7 +13,7 @@ class Contact extends Component {
   render() {
     return (
       <div className={cName}>
-        <Header>Contact</Header>
+        <Header className={`${cName}__header`}>Contact</Header>
 
         <ContactDetails />
         {/* <Row className={`${cName}__row`}>
