@@ -2,12 +2,12 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import './styles/global.css';
 import App from './components/App';
 import PhotosListReducer from './redux/reducers/PhotosListReducer';
 import UploadedPhotosReducer from './redux/reducers/UploadedPhotosReducer';
 import CloudinaryConfig from './config/cloudinary';
 import registerServiceWorker from './registerServiceWorker';
+// import './styles/global.css';
 
 const rootReducer = combineReducers({
   photos: PhotosListReducer,
