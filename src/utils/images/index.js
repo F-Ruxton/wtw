@@ -10,8 +10,10 @@ export const url = (publicId, options) => {
   return cl.url(publicId, scOptions);
 };
 
+const base = process.env.NODE_ENV === 'production' ? 'https://wtw-be.herokuapp.com' : '';
+
 export const resources = async ({ method = apiConstants.get, options = {} } = {}) => {
-  const resources = await axios.post('/resources', { method, options });
+  const resources = await axios.post(`${base}/resources`, { method, options });
   return resources;
 }
 
