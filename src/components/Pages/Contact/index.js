@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../../Header';
-import Row from '../../Row';
 import ContactDetails from '../../ContactDetails';
-import ContactForm from '../../ContactForm';
 import './styles.css';
+// import Row from '../../Row';
+// import ContactForm from '../../ContactForm';
 
 export const CONTACT = 'CONTACT';
 

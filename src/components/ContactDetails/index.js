@@ -31,7 +31,6 @@ const ContactDetails = ({
       We look forward to hearing from you.
     </div>
 
-
     <div className={`${cName}__detail`}>
       <div>WHARNCLIFFE TRAILWORKS</div>
       <div>61 BLACKSMITH LANE    </div>

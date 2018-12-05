@@ -47,7 +47,7 @@ class Nav extends Component {
   render() {
     return (
       <div className={cName}>
-        {/* <ScrollTopOnNavigate /> */}
+        <ScrollTopOnNavigate />
 
         <div className={`${cName}__wrapper`}>
           <div className={`${cName}__masthead`}>
