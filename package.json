@@ -37,7 +37,7 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "start-backend": "node src/server",
-    "build-js": "react-scripts build",
+    "build-js": "ls /tmp/build_24a518f8b17f5/src && react-scripts build",
     "build": "npm-run-all build-css build-js",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
