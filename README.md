@@ -5,7 +5,6 @@
 - [ ] Go over all wording
 - [ ] Check about environment variables
 - [ ] Upload FE
-- [ ] Upload BE
 
 ## ToDo
 

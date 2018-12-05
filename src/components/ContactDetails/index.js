@@ -39,8 +39,6 @@ const ContactDetails = ({
       <div>S35 8NB               </div>
     </div>
 
-
-
   </div>
 );
 
