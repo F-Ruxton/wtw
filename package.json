@@ -25,13 +25,11 @@
     "react-dropzone": "^7.0.1",
     "react-grid-gallery": "^0.5.3",
     "react-loadable": "^5.5.0",
-    "react-redux": "^5.1.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-slick": "^0.23.1",
     "react-transition-group": "^2.5.0",
-    "redux": "^4.0.1",
     "serve": "^10.1.1",
     "slick-carousel": "^1.8.1",
     "ejs": "^2.5.6"

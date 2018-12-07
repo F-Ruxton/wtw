@@ -11,7 +11,7 @@ export const url = (publicId, options) => {
 };
 
 export const resources = async ({ method = apiConstants.get, options = {} } = {}) => {
-  const resources = await axios.post('/api/resources', { method, options });
+  const resources = await axios.post('/resources', { method, options });
   return resources;
 }
 
@@ -37,4 +37,12 @@ export const fetchImage = (imgRequest = {}) => {
 };
 
 export const findByTag =
-  _.curry((imgs, tag) => _.find(img => _.includes(tag, _.get('tags', img)), imgs));
+  _.curry((imgs, tag) => {
+    try {
+      return _.find(img => _.includes(tag, _.get('tags', img)), imgs);
+    }
+    catch (error) {
+      console.log('error fe')
+      console.log(error)
+    }
+  });

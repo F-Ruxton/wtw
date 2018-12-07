@@ -36,11 +36,20 @@ const resourceOptionsDefaults = {
 const getSetup = (req, res) => ({
   method     : _.get(['body', 'method'], req),
   options    : _.defaultsDeep(resourceOptionsDefaults, _.get('body.options', req)),
-  send       : (error, result) => res.json(result),
+  send       : (error, result) => {
+    if (error) {
+      console.log(error);
+      throw error;
+    }
+
+    return res.json(result);
+  }
 });
 
 function resources (req, res) {
   const { method, options, send } = getSetup(req, res);
+
+  console.log(JSON.stringify({ method, options }, null, 4));
 
   switch (method) {
     case constants.get              : _resources              (options, send); break;
@@ -53,6 +62,8 @@ function resources (req, res) {
 };
 
 function listTags(req, res) {
+  console.log({ res });
+
   const { options, send } = getSetup(req, res);
 
   return cloudinary.api.tags(options, send);
