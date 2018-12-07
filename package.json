@@ -2,11 +2,12 @@
   "name": "wtw",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://wtw-be.herokuapp.com",
+  "proxy": "http://localhost:3001",
   "engines": {
     "node": "11.3.0",
     "yarn": "1.12.3"
   },
+  "main": "src",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
@@ -32,12 +33,14 @@
     "react-transition-group": "^2.5.0",
     "redux": "^4.0.1",
     "serve": "^10.1.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "ejs": "^2.5.6"
   },
   "scripts": {
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "start-backend": "node src/server",
+    "test-backend": "node src/server/test",
     "build": "npm-run-all build-css build-js",
     "build-js": "react-scripts build",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
