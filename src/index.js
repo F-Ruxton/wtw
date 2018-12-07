@@ -14,7 +14,13 @@ const rootReducer = combineReducers({
   uploadedPhotos: UploadedPhotosReducer,
 });
 
-const store = createStore(rootReducer);
+const store = process.env.NODE_ENV === 'production'
+  ? createStore(rootReducer)
+  : (
+    createStore(rootReducer, {}, compose(
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    ))
+  );
 
 render(
   <Provider store={store}>
