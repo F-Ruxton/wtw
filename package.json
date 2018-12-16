@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001",
   "engines": {
     "node": "11.3.0",
+    "npm": "6.4.1",
     "yarn": "1.12.3"
   },
   "main": "src",
@@ -45,6 +46,6 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "ls -Rls && yarn && yarn start-backend"
+    "heroku-postbuild": "ls && pwd"
   }
 }
