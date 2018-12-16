@@ -3,9 +3,12 @@ const config     = require('./config');
 const middleware = require('./middleware');
 const apis       = require('./apis');
 const path       = require('path');
+const favicon    = require('express-favicon');
 
 const PORT = process.env.PORT || config.CONSTANTS.PORT;
 const app  = express();
+
+app.use(favicon(__dirname + '/build/favicon.ico'));
 
 middleware.install(app);
 apis.register(app);
